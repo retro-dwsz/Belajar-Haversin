@@ -28,11 +28,12 @@ $$
 
 ### Rumus Dasar (Derajat):
 $$
-\text{hav}(\theta) = \text{hav}(\Delta\phi) + \cos(\phi_1)\cos(\phi_2)\cdot\text{hav}(\Delta\lambda)
-$$
-$$
-\theta = 2 \cdot \arcsin\left( \sqrt{\text{hav}(\theta)} \right)\\
-d = R \cdot \theta
+\begin{aligned}
+\text{hav}(\theta) &= \text{hav}(\Delta\phi) + \cos(\phi_1)\cos(\phi_2)\cdot\text{hav}(\Delta\lambda)
+\\
+\theta &= 2 \cdot \arcsin\left( \sqrt{\text{hav}(\theta)} \right)\\
+d &= R \cdot \theta
+\end{aligned}
 $$
 
 
