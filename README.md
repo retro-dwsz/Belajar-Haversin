@@ -232,7 +232,9 @@ Mulai dari 2D, naik ke 3D, lalu mungkin... naik lagi ke simulasi udara!
 
 ## 📸 Screenshot 
 
-Tambahkan screenshot terminal atau visualisasi nanti jika kamu punya hasil print-out atau plot.
+<img width="598" alt="Python" src="https://github.com/user-attachments/assets/614c1aae-988a-4cf4-a0b1-61a2ce36f55d" />
+<img width="587" alt="Python2" src="https://github.com/user-attachments/assets/dd424f2f-ab0e-477e-b8af-b2c544a3b1e0" />
+<img width="598" alt="Python" src="https://github.com/user-attachments/assets/d7c8d284-1ad9-47d4-8acd-7ff03ab8a07e" />
 
 ---
 
@@ -252,11 +254,12 @@ Kamu bisa tambahkan badge seperti ini (sesuaikan dengan status repo kamu):
 
 Kalau kamu ingin menambahkan hal-hal baru, tambahkan roadmap:
 
-- ✅ Python 2D Done
-- ✅ C++ 2D Done
-- 🟡 Python 3D with ECEF
-- 🟡 C++ 2D (BUG)
-- 🟡 C++ 3D (OTW)
+- ✅ Python 2D Done (APPROVED!)
+- ✅ Python 3D with Pythagoras (APPROVED!)
+- 🟡 Python 3D with ECEF (Meh?)
+- 🟡 C++ 2D Done (Meh)
+- 🟡 C++ 3D with Pythagoras (Meh²)
+- 🟡 C++ 3D with ECEF (Meh³)
 
 ---
 
