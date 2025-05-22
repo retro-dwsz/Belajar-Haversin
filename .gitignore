@@ -1,0 +1,119 @@
+# ----------------------
+# .gitignore for Belajar-Haversin
+# ----------------------
+
+# Python cache & virtual environment
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Python virtual environments
+venv/
+env/
+.virtualenv/
+
+# Python build artifacts
+build/
+dist/
+*.egg-info/
+*.egg
+*.log
+
+# C++ object files and binaries
+*.o
+*.obj
+*.lo
+*.la
+*.lai
+*.Plo
+*.Pli
+*.ilk
+*.exp
+*.pdb
+*.dll
+*.dylib
+
+# Executables (Windows)
+*.exe
+
+# C++ IDE / compiler output
+Debug/
+Release/
+x64/
+x86/
+ipch/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+Makefile
+make.log
+
+# Build directory
+build/
+bin/
+Cppbin/
+dist/
+
+# VSCode, PyCharm, etc.
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs_vista.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*~
+*.pyc
+*.pyo
+*.pyd
+
+# Editor fold
+*.vs~
+*.~lock.*
+*.lock
+*.DS_Store
+*.DS_Store?
+*.Spotlight-V100
+*.Trashes
+*.AppleDouble
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+
+# Logs
+*.log
+nohup.out
+
+# Unit test / coverage
+coverage/
+htmlcov/
+*.coveragerc
+.pytest_cache/
+__pycache__/
