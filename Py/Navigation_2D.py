@@ -1,7 +1,7 @@
 import random
 import math as m
-# import sympy as s
 from os import get_terminal_size as tz
+from typing import List
 
 class Misc:
     def printmid(self, text: str ="Hello", char:str ="=", offset: int = 0, printing: bool = False)-> str | None:
@@ -323,37 +323,97 @@ class Distance_2D:
             d = R * T
 
             return d
-
-
-def main() -> None:
-    SV_IPB    = [-6.588457, 106.806200]
-    Danau_IPB = [-6.559582, 106.726720]
-
-    # arr = [i for i in range(10) print(i)]
-
-    C_D = [SV_IPB, Danau_IPB]
-    print(f"Chords Degrees = {C_D}\n")
-    C_R = [[round(m.radians(i), 6) for i in SV_IPB], [round(m.radians(i), 6) for i in Danau_IPB]]
-
-    print(f"Chords Radians = {C_R}\n")
     
-    Misc().printmid(" Degrees ", "-")
-    W = Distance_2D().Distance_Degrees(SV_IPB, Danau_IPB)
-    Misc().printmid(" Radians ", "-")
-    G = Distance_2D().Distance_Radians(SV_IPB, Danau_IPB)
+class Navigation:
+    def Nav2D(self, Points: List[List[float]], isRadian:bool = False) -> float:
+        """
+        Calculate total 2D distance from a list of [lat, lon] points.
+        
+        Args:
+            Points: List of [latitude, longitude] pairs
+        
+        Returns:
+            Total distance in kilometers
+        """
+        if len(Points) < 2:
+            raise ValueError("Need at least two points to compute distance")
 
-    print("~"*tz().columns)
+        total_distance = 0.0
+        for i in range(len(Points) - 1):
+            total_distance += Distance_2D().Distance(Points[i], Points[i+1], isRadian)
 
-    W = Distance_2D().Distance(SV_IPB, Danau_IPB)
-    G = Distance_2D().Distance(SV_IPB, Danau_IPB, useRadian=True)
+        return total_distance
 
-    print(f"Degrees = {W} KM")
-    print(f"Radians = {G} KM")
+class Main:
+    def Test2Points(self) -> None:
+        SV_IPB    = [-6.588457, 106.806200]
+        Danau_IPB = [-6.559582, 106.726720]
 
-    if W == G:
-        print("APPROVED!")
-    else:
-        print("meh")
+        # arr = [i for i in range(10) print(i)]
+
+        C_D = [SV_IPB, Danau_IPB]
+        print(f"Chords Degrees = {C_D}\n")
+        C_R = [[round(m.radians(i), 6) for i in SV_IPB], [round(m.radians(i), 6) for i in Danau_IPB]]
+
+        print(f"Chords Radians = {C_R}\n")
+        
+        Misc().printmid(" Degrees ", "-")
+        W = Distance_2D().Distance_Degrees(SV_IPB, Danau_IPB)
+        Misc().printmid(" Radians ", "-")
+        G = Distance_2D().Distance_Radians(SV_IPB, Danau_IPB)
+
+        print("~"*tz().columns)
+
+        W = Distance_2D().Distance(SV_IPB, Danau_IPB)
+        G = Distance_2D().Distance(SV_IPB, Danau_IPB, useRadian=True)
+
+        print(f"Degrees = {W} KM")
+        print(f"Radians = {G} KM")
+
+        if W == G:
+            print("APPROVED!")
+        else:
+            print("meh")
+        
+    def TestDriving(self) -> None:
+        # From Church of Zebaoth to Lippo Plaza Ekalokasari
+        Start = [-6.597833622666178, 106.794373367117]
+        Finish = [-6.62225014590596, 106.8175039391197]
+        Driving = [
+            Start,
+            [-6.597052825849262, 106.7937717227824],
+            [-6.594705841518939, 106.7942047962342],
+            [-6.593604212378643, 106.7961204047717],
+            [-6.593158753811323, 106.7965106718923],
+            [-6.59358588035416, 106.7977024324252],
+            [-6.592574319321151, 106.7996765661645],
+            [-6.592563005485911, 106.8017069133976],
+            [-6.594667559352246, 106.8025736217902],
+            [-6.595509737648851, 106.8040512684551],
+            [-6.600999297161692, 106.8050744834284],
+            [-6.603626052516093, 106.8060427964824],
+            [-6.604047858096131, 106.806516050656],
+            [-6.601627793206586, 106.8105263916231],
+            [-6.601627793206586, 106.8105263916231],
+            [-6.604752634429251, 106.8069558676157],
+            [-6.605464978116315, 106.8073990601912],
+            [-6.606909664145737, 106.8079136645895],
+            [-6.615939116766738, 106.8142013219661],
+            [-6.620564055949383, 106.8158072006643],
+            [-6.622434959044009, 106.8173220950337],
+            Finish
+        ]
+
+        Driving_Distance:float = Navigation().Nav2D(Driving)
+
+        for n, D in enumerate(Driving, start=1):
+            print(f"Driving {f"{n:^2}"} = {D}")
+        print(f"Start = {Start}")
+        print(f"Finish = {Finish}\n")
+        
+        print(f"Start -> Finish = {Distance_2D().Distance(Start, Finish, False)} KM")
+        print(f"Start -> Driving -> Finish = {Driving_Distance}")
 
 if __name__ == "__main__":
-    main()
+    Main().Test2Points()
+    Main().TestDriving()
