@@ -1,4 +1,7 @@
+garis lurus dari SV IPB ke Danau IPB
+
 $$
+
 \Large
 
 \begin{aligned}
@@ -11,8 +14,6 @@ $$
 \\
 \\
 
-\Large
-
 \begin{aligned}
 \Delta\phi &= \phi_2 - \phi_1 \\
 \Delta\phi &= -6.559582 - -6.588457 \\
@@ -23,8 +24,6 @@ $$
 \end{aligned}
 
 \\
-
-\Large
 
 \\
 
@@ -49,7 +48,5 @@ d &\approx 9.054371327982746 \\
 d &\approx 9.05 \text{ km}\\
 
 \end{aligned}
-
-
 
 $$
