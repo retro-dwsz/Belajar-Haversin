@@ -244,8 +244,6 @@ C++ Degrees
 ---
 ## 📦 Badge 
 
-Kamu bisa tambahkan badge seperti ini (sesuaikan dengan status repo kamu):
-
 [![Build Status](https://img.shields.io/badge/build-passed-green)]()
 [![Language](https://img.shields.io/badge/language-Python%20&%20C++-blue)]()
 
