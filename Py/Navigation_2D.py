@@ -323,7 +323,42 @@ class Distance_2D:
             d = R * T
 
             return d
-    
+
+class Inverses:
+    '''
+    The inverse
+
+    Function to find theta in both Radian and Degrees
+    from given distance in KM
+    '''
+    def FindTheta_Rad(self, distance_km: float) -> float:
+        """
+        Calculate the central angle θ in radians given the distance in kilometers.
+
+        Parameters:
+            distance_km (float): Distance between two points in kilometers.
+
+        Returns:
+            float: Central angle θ in radians.
+        """
+        R = 6378  # Earth's radius in kilometers
+        theta_rad = distance_km / R
+        return theta_rad
+
+    def FindTheta_Deg(self, distance_km: float) -> float:
+        """
+        Calculate the central angle θ in degrees given the distance in kilometers.
+
+        Parameters:
+            distance_km (float): Distance between two points in kilometers.
+
+        Returns:
+            float: Central angle θ in degrees.
+        """
+        theta_rad = self.FindTheta_Rad(distance_km)
+        theta_deg = theta_rad * (180 / m.pi)
+        return theta_deg
+        
 class Navigation:
     def Nav2D(self, Points: List[List[float]], isRadian:bool = False) -> float:
         """
