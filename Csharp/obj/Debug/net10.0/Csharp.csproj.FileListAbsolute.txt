@@ -1,0 +1,14 @@
+D:\Code\!Docs\Obsolete Trig\Navigation\Csharp\bin\Debug\net10.0\Csharp.exe
+D:\Code\!Docs\Obsolete Trig\Navigation\Csharp\bin\Debug\net10.0\Csharp.deps.json
+D:\Code\!Docs\Obsolete Trig\Navigation\Csharp\bin\Debug\net10.0\Csharp.runtimeconfig.json
+D:\Code\!Docs\Obsolete Trig\Navigation\Csharp\bin\Debug\net10.0\Csharp.dll
+D:\Code\!Docs\Obsolete Trig\Navigation\Csharp\bin\Debug\net10.0\Csharp.pdb
+D:\Code\!Docs\Obsolete Trig\Navigation\Csharp\obj\Debug\net10.0\Csharp.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\!Docs\Obsolete Trig\Navigation\Csharp\obj\Debug\net10.0\Csharp.AssemblyInfoInputs.cache
+D:\Code\!Docs\Obsolete Trig\Navigation\Csharp\obj\Debug\net10.0\Csharp.AssemblyInfo.cs
+D:\Code\!Docs\Obsolete Trig\Navigation\Csharp\obj\Debug\net10.0\Csharp.csproj.CoreCompileInputs.cache
+D:\Code\!Docs\Obsolete Trig\Navigation\Csharp\obj\Debug\net10.0\Csharp.dll
+D:\Code\!Docs\Obsolete Trig\Navigation\Csharp\obj\Debug\net10.0\refint\Csharp.dll
+D:\Code\!Docs\Obsolete Trig\Navigation\Csharp\obj\Debug\net10.0\Csharp.pdb
+D:\Code\!Docs\Obsolete Trig\Navigation\Csharp\obj\Debug\net10.0\Csharp.genruntimeconfig.cache
+D:\Code\!Docs\Obsolete Trig\Navigation\Csharp\obj\Debug\net10.0\ref\Csharp.dll
