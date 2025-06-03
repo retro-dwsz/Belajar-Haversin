@@ -1,7 +1,52 @@
+'''
+Finding distance of 2 coords in Radians or Degrees using the Haversine formula.
+Ref: https://en.wikipedia.org/wiki/Haversine_formula 
+
+TODO:
+- Translate to native binary or byte codes languages (C, C++, C#,  Java, ...) for better performance 
+'''
+
 import random
 import math as m
 from os import get_terminal_size as tz
 from typing import List
+
+'''
+Symbols for the road
+'''
+# x, y = s.symbols("x y")
+# havf = s.Function("hav")(x)     # type: ignore
+
+# Math symbols
+DEGREE = "\u00b0"
+RAD = " RAD"
+SQRT = "\u221a"
+APRX = "\u2248"
+
+# Earth radius
+R = 6378
+
+# Sum-script 1
+SUB_1 = "\u2081"
+SUB_2 = "\u2082"
+
+# Greek Symbols
+DELTA = "\u0394"
+THETA = "\u03b8"
+PHI = "\u03d5"
+LAMBDA = "\u03bb"
+
+# Greek Symbols with color
+C_DELTA = "\x1b[38;2;115;192;105m\u0394\x1b[0m"
+C_THETA = "\x1b[38;2;255;138;70m\u03b8\x1b[0m"
+C_PHI   = "\x1b[38;2;16;150;150m\u03d5\x1b[0m"
+C_LAMBDA= "\x1b[38;2;223;196;125m\u03bb\x1b[0m"
+
+C_SS = [C_THETA, C_PHI, C_LAMBDA, C_DELTA]
+
+# Sub-scripts
+SB1 = "\u2081"
+SB2 = "\u2082"
 
 class Misc:
     def printmid(self, text: str ="Hello", char:str ="=", offset: int = 0, printing: bool = False)-> str | None:
@@ -36,8 +81,9 @@ class Misc:
 
         Returns:
             str: ANSI color-formatted string.
+
+        Todo: Make hex to uint32
         """
-        
         if hex.lower() == "random":
             # Generate random colors for each character in the string
             colored_chars = []
@@ -52,94 +98,48 @@ class Misc:
             rgb = tuple(int(hex[i:i+2], 16) for i in (0, 2, 4))
             return f"\033[38;2;{rgb[0]};{rgb[1]};{rgb[2]}m{tx}\033[0m"
 
-'''
-Symbols for the road
-'''
-# x, y = s.symbols("x y")
-# havf = s.Function("hav")(x)     # type: ignore
+class Haversine:
+    @staticmethod
+    def hav(x, isRadian = True) -> int|float:
+        if isRadian:
+            pass
+        else:
+            x = m.radians(x)
+        
+        cos = m.cos(x)
+        Hav = (1 - cos)/2
+        
+        print(f"~! x = {x}")
+        print(f"~! cos(x) = {cos}")
+        print(f"~! 1-cos(x) = {1 - cos}")
+        print(f"~! hav(x) = {Hav}\n")
+        return Hav
 
-# Greek Symbols
-DELTA = "\u0394"
-THETA = Misc().colortx("\u03b8", "ff8a46")
-PHI = Misc().colortx("\u03d5", "109696")
-LAMBDA = Misc().colortx("\u03bb", "dfc47d")
-
-# Math symbols
-DEGREE = "\u00b0"
-RAD = " RAD"
-SQRT = "\u221a"
-APRX = "\u2248"
-
-# Earth radius
-R = 6378
-
-# Sum-script 1
-SUB_1 = "\u2081"
-SUB_2 = "\u2082"
-
-
-def hav(x, isRadian = True) -> int|float:
-    if isRadian:
-        x = x
-    else:
+    @staticmethod
+    def hav_degree(x) -> int|float:
+        # radian-ize the Angle
+        # because python expect angle in radian
         x = m.radians(x)
-    
-    cos = m.cos(x)
-    Hav = (1 - cos)/2
-    
-    print(f">>> x = {x}")
-    print(f">>> cos(x) = {cos}")
-    print(f">>> 1-cos(x) = {1 - cos}")
-    print(f">>> hav(x) = {Hav}\n")
-    return Hav
-
-def hav_degree(x) -> int|float:
-    # radian-ize the Angle
-    # because python expect angle in radian
-    x = m.radians(x)
-    
-    cos = m.cos(x)
-    Hav = (1 - cos)/2
-    
-    print(f">>> x = {x}")
-    print(f">>> cos(x) = {cos}")
-    print(f">>> 1-cos(x) = {1 - cos}")
-    print(f">>> hav(x) = {Hav}\n")
-    return Hav
+        
+        cos = m.cos(x)
+        Hav = (1 - cos)/2
+        
+        print(f"~! x = {x}")
+        print(f"~! cos(x) = {cos}")
+        print(f"~! 1-cos(x) = {1 - cos}")
+        print(f"~! hav(x) = {Hav}\n")
+        return Hav
 
 class Distance_2D:
     def Distance_Radians(self, A: list[int|float], B: list[int|float]):
         r'''
-        based on Generic formula using Radian:
+        based on Radian formula:
         hav(θ) = hav(Δφ) + cos(φ₁) * cos(φ₂) * hav(Δλ)
         θ = 2 * arctan2(√(θ), √(1-θ))
         d = R * θ
 
         hav(x) = sin²(x/2) = (1 - cos(x))/2
         '''
-
-        # ''' Choords in Degrees '''
-        # print(f"Coords {DEGREE}:")
-
-        # lat1 = A[0]
-        # print(f"{PHI}{SUB_1} = {lat1}{DEGREE}")
-        # lon1 = A[1]
-        # print(f"{LAMBDA}{SUB_1} = {lon1}{DEGREE}\n")
-
-        # lat2 = B[0]
-        # print(f"{PHI}{SUB_2} = {lat2}{DEGREE}")
-        # lon2 = B[1]
-        # print(f"{LAMBDA}{SUB_2} = {lon2}{DEGREE}\n~~~")
-
-        # dLat = lat2 - lat1
-        # print(f"{DELTA}{PHI} = {PHI}{SUB_2} - {PHI}{SUB_1}")
-        # print(f"{DELTA}{PHI} = {lat2} - {lat1}")
-        # print(f"{DELTA}{PHI} = {dLat}\n")
-
-        # dLon = lon2 - lon1
-        # print(f"{DELTA}{PHI} = {PHI}{SUB_2} - {PHI}{SUB_1}")
-        # print(f"{DELTA}{PHI} = {lon2} - {lon1}")
-        # print(f"{DELTA}{PHI} = {dLon}\n~~~")
 
         ''' Choords in Radians '''
         print(f"Coords {RAD}:")
@@ -168,25 +168,25 @@ class Distance_2D:
         cos1 = m.cos(lat1)
         cos2 = m.cos(lat2)
 
-        print(f">>  hav({DELTA}{PHI})")
-        print(f">>  hav({dLat})")
-        hav1 = hav(dLat)
+        print(f"~  hav({DELTA}{PHI})")
+        print(f"~  hav({dLat})")
+        hav1 = Haversine.hav(dLat)
         
-        print(f">>  hav({DELTA}{LAMBDA})")
-        print(f">>  hav({dLon})")
-        hav2 = hav(dLon)
+        print(f"~  hav({DELTA}{LAMBDA})")
+        print(f"~  hav({dLon})")
+        hav2 = Haversine.hav(dLon)
 
         HAV = hav1 + cos1 * cos2 * hav2
         print(f"hav({THETA}) = hav({DELTA}{PHI}) + cos({PHI}{SUB_1}) * cos({PHI}{SUB_2}) * hav({DELTA}{LAMBDA})")
         print(f"hav({THETA}) = hav({dLat}) + cos({lat1}) * cos({lat2}) * hav({dLon})")
         print(f"hav({THETA}) = {hav1} + {cos1} * {cos2} * {hav2}")
-        print(f"hav({THETA}) = {HAV}")
+        print(f"hav({THETA}) = {HAV}\n")
 
         T = 2 * m.atan2(m.sqrt(HAV), m.sqrt(1 - HAV))
         print(f"{THETA} = 2 * archav({THETA})")
         print(f"{THETA} = 2 * arctan2({SQRT}({THETA}), {SQRT}(1 - {THETA}))")
         print(f"{THETA} = 2 * arctan2({SQRT}({HAV}), {SQRT}({1 - HAV}))")
-        print(f"{THETA} = {T}")
+        print(f"{THETA} = {T}\n")
 
         d = R * T
         print(f"d = R * θ")
@@ -239,24 +239,24 @@ class Distance_2D:
         cos1 = m.cos(m.radians(lat1))
         cos2 = m.cos(m.radians(lat2))
 
-        print(f">>  hav({DELTA}{PHI})")
-        print(f">>  hav({dLat})")
-        hav1 = hav_degree(dLat)
+        print(f"~  hav({DELTA}{PHI})")
+        print(f"~  hav({dLat})")
+        hav1 = Haversine.hav_degree(dLat)
         
-        print(f">>  hav({DELTA}{LAMBDA})")
-        print(f">>  hav({dLon})")
-        hav2 = hav_degree(dLon)
+        print(f"~  hav({DELTA}{LAMBDA})")
+        print(f"~  hav({dLon})")
+        hav2 = Haversine.hav_degree(dLon)
         
         HAV = hav1 + cos1 * cos2 * hav2
         print(f"hav({THETA}{DEGREE}) = hav({DELTA}{PHI}{DEGREE}) + cos({PHI}{SUB_1}{DEGREE}) * cos({PHI}{SUB_2}{DEGREE}) * hav({DELTA}{LAMBDA}{DEGREE})")
         print(f"hav({THETA}{DEGREE}) = hav({dLat}{DEGREE}) + cos({lat1}{DEGREE}) * cos({lat2}{DEGREE}) * hav({dLon}{DEGREE})")
         print(f"hav({THETA}{DEGREE}) = {hav1} + {cos1} * {cos2} * {hav2}")
-        print(f"hav({THETA}{DEGREE}) = {HAV}")
+        print(f"hav({THETA}{DEGREE}) = {HAV}\n")
 
         T = 2 * m.asin(m.sqrt(HAV))
         print(f"{THETA}{DEGREE} = 2 * archav(hav({THETA}))")
         print(f"{THETA}{DEGREE} = 2 * arcsin({SQRT}{HAV})")
-        print(f"{THETA}{DEGREE} = {T}{DEGREE}")
+        print(f"{THETA}{DEGREE} = {T}{DEGREE}\n")
 
         d = R * T
         print(f"d = R * θ{DEGREE}")
@@ -358,8 +358,11 @@ class Inverses:
         theta_rad = self.FindTheta_Rad(distance_km)
         theta_deg = theta_rad * (180 / m.pi)
         return theta_deg
-        
+
 class Navigation:
+    def FindHeading(self, A, B, Rotation:str = "X".lower()):
+        ...
+    
     def Nav2D(self, Points: List[List[float]], isRadian:bool = False) -> float:
         """
         Calculate total 2D distance from a list of [lat, lon] points.
@@ -409,7 +412,55 @@ class Main:
             print("APPROVED!")
         else:
             print("meh")
+
+    def TestTheta(self) -> None:
+        SV_IPB    = [-6.588457, 106.806200]
+        Danau_IPB = [-6.559582, 106.726720]
+
+        # arr = [i for i in range(10) print(i)]
+
+        C_D = [SV_IPB, Danau_IPB]
+        print(f"Chords Degrees = {C_D}\n")
+        C_R = [[round(m.radians(i), 6) for i in SV_IPB], [round(m.radians(i), 6) for i in Danau_IPB]]
+
+        print(f"Chords Radians = {C_R}\n")
         
+        Misc().printmid(" Degrees ", "-")
+        W = Distance_2D().Distance_Degrees(SV_IPB, Danau_IPB)
+        Misc().printmid(" Radians ", "-")
+        G = Distance_2D().Distance_Radians(SV_IPB, Danau_IPB)
+
+        print("~"*tz().columns)
+
+        W = Inverses().FindTheta_Deg(Distance_2D().Distance(SV_IPB, Danau_IPB))
+        G = Inverses().FindTheta_Rad(Distance_2D().Distance(SV_IPB, Danau_IPB, useRadian=True))
+
+        print(f"Degrees = {W} {DEGREE}")
+        print(f"Radians = {G} {DEGREE}")
+        
+    def Test2Points_b(self) -> None:
+        A = [-1.2641420, 116.9044294, 13.57744]
+        B = [-1.2850163, 116.8741897, 500]
+        C = [-1.2979892, 116.8873772, 800]
+
+        A_B = Distance_2D().Distance(A, B)
+        B_C = Distance_2D().Distance(B, C)
+
+        print(f"φA {A[0]}{DEGREE}")
+        print(f"λA {A[1]}{DEGREE}")
+        print(f"hA {A[2]} FT\n")
+
+        print(f"φB {B[0]}{DEGREE}")
+        print(f"λB {B[1]}{DEGREE}")
+        print(f"hB {B[2]} FT\n")
+
+        print(f"φC {C[0]}{DEGREE}")
+        print(f"λC {C[1]}{DEGREE}")
+        print(f"hC {C[2]} FT\n")
+        
+        print(f"A -> B = {A_B:.5F} KM")
+        print(f"B -> C = {B_C:.5F} KM")
+
     def TestDriving(self) -> None:
         # From Church of Zebaoth to Lippo Plaza Ekalokasari
         Start = [-6.597833622666178, 106.794373367117]
@@ -451,4 +502,7 @@ class Main:
 
 if __name__ == "__main__":
     Main().Test2Points()
-    Main().TestDriving()
+    # Misc().printmid("#", "·")
+    # Main().TestTheta()
+    # Main().Test2Points_b()
+    # Main().TestDriving()
