@@ -1,8 +1,8 @@
 /* Haversine.cs */
 
-using nSymbols;
+namespace Haversine;
 
-namespace nHaversine;
+using Symbols;
 
 /// <summary>
 /// Provides methods to calculate the haversine function used in geographical distance calculations.

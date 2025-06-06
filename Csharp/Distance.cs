@@ -1,10 +1,11 @@
 /* Distance.cs */
 
-namespace nDistance;
+namespace Distance;
 
 using Csharp;
-using nHaversine;
-using nSymbols;
+using Haversine;
+using Symbols;
+using Location;
 
 class nDistance
 {
@@ -29,26 +30,26 @@ class nDistance
             // Print Degree coordinates 
             Console.WriteLine("Choords in Degrees");
 
-            /// Latitudes
+            // Latitudes
             double lat1 = A.Lat;
             double lon1 = A.Lon;
             Console.WriteLine($"{Symbols.PHI}{Symbols.SB1} = {lat1}{Symbols.DEGREE}");
             Console.WriteLine($"{Symbols.LAMBDA}{Symbols.SB1} = {lon1}{Symbols.DEGREE}\n");
 
-            /// Longitudes
+            // Longitudes
             double lat2 = B.Lat;
             double lon2 = B.Lon;
             Console.WriteLine($"{Symbols.PHI}{Symbols.SB2} = {lat2}{Symbols.DEGREE}");
             Console.WriteLine($"{Symbols.LAMBDA}{Symbols.SB2} = {lon2}{Symbols.DEGREE}\n~~~");
 
             // Calculate Deltas
-            /// Delta phi
+            // Delta phi
             double Dlat = lat2 - lat1;
             Console.WriteLine($"{Symbols.DELTA}{Symbols.PHI} = {Symbols.PHI}{Symbols.SB2} - {Symbols.PHI}{Symbols.SB1}");
             Console.WriteLine($"{Symbols.DELTA}{Symbols.PHI} = {lat2} - {lat1}");
             Console.WriteLine($"{Symbols.DELTA}{Symbols.PHI} = {Dlat}\n");
 
-            /// Delta lambda
+            // Delta lambda
             double Dlon = lon2 - lon1;
             Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {Symbols.LAMBDA}{Symbols.SB2} - {Symbols.LAMBDA}{Symbols.SB1}");
             Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {lat2} - {lat1}");
@@ -103,26 +104,26 @@ class nDistance
         {
             // Print Radian coordinates 
             Console.WriteLine("Choords in Radians");
-            /// Latitudes
+            // Latitudes
             double lat1 = A.Lat;
             double lon1 = A.Lon;
             Console.WriteLine($"{Symbols.PHI}{Symbols.SB1} = {lat1}{Symbols.RAD}");
             Console.WriteLine($"{Symbols.LAMBDA}{Symbols.SB1} = {lon1}{Symbols.RAD}\n");
 
-            /// Longitudes
+            // Longitudes
             double lat2 = B.Lat;
             double lon2 = B.Lon;
             Console.WriteLine($"{Symbols.PHI}{Symbols.SB2} = {lat2}{Symbols.RAD}");
             Console.WriteLine($"{Symbols.LAMBDA}{Symbols.SB2} = {lon2}{Symbols.RAD}\n~~~");
 
             // Calculate Deltas
-            /// Delta phi
+            // Delta phi
             double Dlat = lat2 - lat1;
             Console.WriteLine($"{Symbols.DELTA}{Symbols.PHI} = {Symbols.PHI}{Symbols.SB2} - {Symbols.PHI}{Symbols.SB1}");
             Console.WriteLine($"{Symbols.DELTA}{Symbols.PHI} = {lat2} - {lat1}");
             Console.WriteLine($"{Symbols.DELTA}{Symbols.PHI} = {Dlat}\n");
 
-            /// Delta lambda
+            // Delta lambda
             double Dlon = lon2 - lon1;
             Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {Symbols.LAMBDA}{Symbols.SB2} - {Symbols.LAMBDA}{Symbols.SB1}");
             Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {lat2} - {lat1}");
@@ -178,8 +179,7 @@ class nDistance
 
             double Hav, T, d;
 
-            if (!IsRadian)
-            {
+            if (!IsRadian) {
                 lat1 = A.Lat;
                 lon1 = A.Lon;
                 lat2 = B.Lat;
@@ -196,9 +196,7 @@ class nDistance
                 T = 2 * Math.Asin(Math.Sqrt(Hav));
                 d = R * T;
                 return d;
-            }
-            else
-            {
+            } else {
                 lat1 = A.Lat;
                 lon1 = A.Lon;
                 lat2 = B.Lat;
@@ -216,7 +214,6 @@ class nDistance
                 d = R * T;
                 return d;
             }
-
         }
     }
 }

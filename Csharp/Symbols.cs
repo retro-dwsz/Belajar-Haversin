@@ -1,6 +1,6 @@
 /* Symbols.cs */
 
-namespace nSymbols;
+namespace Symbols;
 
 public static class Symbols
 {

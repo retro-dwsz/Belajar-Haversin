@@ -2,7 +2,7 @@
 
 using System.Text;
 
-namespace nMisc;
+namespace Misc;
 
 /// <summary>
 /// Provides utility methods for string manipulation and console formatting.
