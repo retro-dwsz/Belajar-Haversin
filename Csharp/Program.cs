@@ -15,13 +15,14 @@ using Driving;
 using Location;
 
 class Program{
-    private static void IPB() {
+    private static void IPB()
+    {
         /*
         [-6.588457, 106.806200]
         [-6.559582, 106.726720]
         */
 
-        Location SV_IPB = new Location( "SV IPB", -6.588457, 106.806200, isRadian: false);
+        Location SV_IPB = new Location("SV IPB", -6.588457, 106.806200, isRadian: false);
         Location Danau_IPB = new Location("Danau IPB", -6.559582, 106.726720, isRadian: false);
 
         SV_IPB.Printer();
@@ -36,16 +37,19 @@ class Program{
         Danau_IPB.toRadian();
 
         // double R = nDistance.Distance_2D.Distance_Rad(SV_IPB, Danau_IPB);
-        double R = nDistance.Distance_2D.Distance(SV_IPB, Danau_IPB, IsRadian:true);
+        double R = nDistance.Distance_2D.Distance(SV_IPB, Danau_IPB, IsRadian: true);
 
         Console.WriteLine(Mics.Repeater("~", Console.WindowWidth));
 
         Console.WriteLine($"Degrees = {D} KM");
         Console.WriteLine($"Radians = {R} KM");
 
-        if (D == R) {
+        if (D == R)
+        {
             Console.WriteLine("APPROVED!");
-        }else  {
+        }
+        else
+        {
             Console.WriteLine("meh");
         }
     }
