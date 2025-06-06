@@ -188,8 +188,8 @@ class nDistance
                 Dlat = lat2 - lat1;
                 Dlon = lon2 - lon1;
 
-                hav1 = Haversine.Hav_deg(Dlat, Printing: true);
-                hav2 = Haversine.Hav_deg(Dlon, Printing: true);
+                hav1 = Haversine.Hav_deg(Dlat);
+                hav2 = Haversine.Hav_deg(Dlon);
                 cos1 = Math.Cos(Haversine.deg2rad(lat1));
                 cos2 = Math.Cos(Haversine.deg2rad(lat2));
                 Hav = hav1 + cos1 * cos2 * hav2;
@@ -207,8 +207,8 @@ class nDistance
                 Dlat = lat2 - lat1;
                 Dlon = lon2 - lon1;
 
-                hav1 = Haversine.Hav_rad(Dlat, Printing: true);
-                hav2 = Haversine.Hav_rad(Dlon, Printing: true);
+                hav1 = Haversine.Hav_rad(Dlat);
+                hav2 = Haversine.Hav_rad(Dlon);
                 cos1 = Math.Cos(lat1);
                 cos2 = Math.Cos(lat2);
                 Hav = hav1 + cos1 * cos2 * hav2;
