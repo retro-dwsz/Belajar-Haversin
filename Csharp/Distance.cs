@@ -7,7 +7,7 @@ using Haversine;
 using Symbols;
 using Location;
 
-class nDistance
+class Distance
 {
     public static int R = 6378;
 

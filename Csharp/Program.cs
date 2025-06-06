@@ -4,15 +4,16 @@ namespace Csharp;
 
 using System;                   // System sauces
 using System.ComponentModel;
+using System.Runtime;
+
 /**/
-using Haversine;               // Main sauce
+using Location;                // Main sauce I
+using Haversine;               // Main sauce II
 using Symbols;                 // Helper of main sauce
 using Distance;                // The main dish along with the main sauce
 using Misc;                    // Very side dish
-using System.Runtime;
 
-using Driving;
-using Location;
+using Driving;                 // GPS wannabe
 
 class Program{
     private static void IPB()
@@ -30,14 +31,14 @@ class Program{
 
         Console.WriteLine(Mics.PrintMid("Degree", '-'));
         // double D = nDistance.Distance_2D.Distance_Deg(SV_IPB, Danau_IPB);
-        double D = nDistance.Distance_2D.Distance(SV_IPB, Danau_IPB);
-
+        double D = Distance.Distance_2D.Distance_Deg(SV_IPB, Danau_IPB);
+        
         Console.WriteLine(Mics.PrintMid("Radians", '-'));
         SV_IPB.toRadian();
         Danau_IPB.toRadian();
-
+        
         // double R = nDistance.Distance_2D.Distance_Rad(SV_IPB, Danau_IPB);
-        double R = nDistance.Distance_2D.Distance(SV_IPB, Danau_IPB, IsRadian: true);
+        double R = Distance.Distance_2D.Distance_Rad(SV_IPB, Danau_IPB);
 
         Console.WriteLine(Mics.Repeater("~", Console.WindowWidth));
 

@@ -58,6 +58,7 @@ Lihat di [sini](https://en.wikipedia.org/wiki/Haversine_formula)
 |--------|-----------|------------|------------------|---------------|---------------------|
 | Python | ✅         | ✅          | ✅                | ❌             | ✅                  |
 | C++    | ✅         | ❌ (WIP)   | ✅                | ❌             | ✅                  |
+| C#     | ✅         | ❌ (WIP)   | ❌                | ❌             | ❌                  |
 
 Repo ini dirancang agar mudah dipelajari dan dikembangkan. Kamu bisa mengeksplorasi perbedaan kecil pada hasil antara Python dan C++ karena presisi floating point.
 
@@ -66,6 +67,8 @@ Repo ini dirancang agar mudah dipelajari dan dikembangkan. Kamu bisa mengeksplor
 ## 📁 Struktur Repo
 
 ```
+C++ ý Python
+│
 ├── Python/
 │   ├── Navigation.py         # Navigasi Gabungan
 │   ├── Navigation_2D.py      # Navigasi 2D (lat, lon) yg di Improve
@@ -84,6 +87,17 @@ Repo ini dirancang agar mudah dipelajari dan dikembangkan. Kamu bisa mengeksplor
 │   └── _Main.exe             # Build dari File utama _Main.cpp
 ├── README.md
 └── .gitignore
+
+C#
+├─ /obj
+├─ /bin
+├─ Distance.cs
+├─ Driving.cs
+├─ Haversine.cs
+├─ Location.cs
+├─ Misc.cs
+├─ Program.cs
+└─ Symbols.cs
 ```
 
 ---
@@ -95,14 +109,23 @@ Repo ini dirancang agar mudah dipelajari dan dikembangkan. Kamu bisa mengeksplor
 # SV IPB ke Danau IPB 
 Chords = [[-6.588457, 106.8062], [-6.559582, 106.72672]]
 ...
-Distance ≈ 9.35 km
+Degrees = 9.358608543232885 KM
+Radians = 9.358608543232885 KM
+APPROVED!
 ```
 
 ### C++
-```
+```c++
 Degrees = 9.358608358705892
 Radians = 9.357494150382932
 meh
+```
+
+### C#
+```csharp
+Degrees = 9,358608543232885 KM
+Radians = 9,358608543232885 KM
+APPROVED!
 ```
 
 Kecil perbedaan output? Itu normal 👇
@@ -255,10 +278,16 @@ Kalau kamu ingin menambahkan hal-hal baru, tambahkan roadmap:
 
 - ✅ Python 2D Done (APPROVED!)
 - ✅ Python 3D with Pythagoras (APPROVED!)
+- ✅ Python 2D Driving (APPROVED!)
 - 🟡 Python 3D with ECEF (Meh?)
 - 🟡 C++ 2D Done (Meh)
 - 🟡 C++ 3D with Pythagoras (Meh²)
 - 🟡 C++ 3D with ECEF (Meh³)
+- 🟡 C++ 2D Driving (Meh⁴)
+- ✅ C# 2D Done (APPROVED!)
+- 🟡 C# 3D with Pythagoras (Approved?)
+- 🟡 C# 3D with ECEF (Meh?)
+- 🟡 C# 2D Driving (Meh?²)
 
 ---
 
