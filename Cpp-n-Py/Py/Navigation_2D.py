@@ -463,7 +463,7 @@ class Main:
 
     def TestDriving(self) -> None:
         # From Church of Zebaoth to Lippo Plaza Ekalokasari
-        Start = [-6.597833622666178, 106.794373367117]
+        Start =  [-6.597833622666178, 106.794373367117]
         Finish = [-6.62225014590596, 106.8175039391197]
         Driving = [
             Start,
