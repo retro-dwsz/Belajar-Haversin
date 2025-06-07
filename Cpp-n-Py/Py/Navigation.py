@@ -24,14 +24,15 @@ SUB_1 = "\u2081"
 SUB_2 = "\u2082"
 
 class Misc:
-    def printmid(self, text: str ="Hello", char:str ="=", offset: int = 0, printing: bool = False)-> str | None:
+    @staticmethod
+    def printmid(text: str ="Hello", char:str ="=", offset: int = 0, printing: bool = False)-> str | None:
         """
         Print text centered with borders.
 
         Parameters:
             text (str): Text to print.
             offset (int): Extra width to add to terminal size.
-            p (bool): Whether to print the text or return it.
+            printing (bool): Whether to print the text or return it.
 
         Returns:
             str: The centered text (if p=False).
@@ -130,16 +131,16 @@ class Haversin:
 
 class Distance_2D:
     def Distance_Radians(self, A: list[int|float], B: list[int|float]) -> float:
-        r'''
+        r"""
         based on Generic formula using Radian:
         hav(θ) = hav(Δφ) + cos(φ₁) * cos(φ₂) * hav(Δλ)
         θ = 2 * arctan2(√(θ), √(1-θ))
         d = R * θ
 
         hav(x) = sin²(x/2) = (1 - cos(x))/2
-        '''
+        """
 
-        ''' Choords in Degrees '''
+        ''' Chords in Degrees '''
         print(f"Coords {DEGREE}:")
 
         lat1 = A[0]
@@ -218,7 +219,7 @@ class Distance_2D:
         return d
     
     def Distance_Degrees(self, A: list[int|float], B: list[int|float]):
-        r'''
+        r"""
         based on Wikipedia article:
         https://en.wikipedia.org/wiki/Haversine_formula
 
@@ -229,9 +230,9 @@ class Distance_2D:
 
         hav(x) = sin²(x/2) = (1 - cos(x))/2
         archav(θ) = 2 * arcsin(√(θ)) = 2 * arctan2(√(θ), √(1-θ))
-        '''
+        """
 
-        ''' Choords in Degrees '''
+        ''' Chords in Degrees '''
         print("Coords:")
 
         lat1 = A[0]
@@ -289,7 +290,7 @@ class Distance_2D:
         return d
     
     def Distance(self, A: list[int|float], B: list[int|float], useRadian:bool = False) -> int|float:
-        '''
+        """
         The wikipedia and generic way, but without any printing
 
         if Radian: 
@@ -304,7 +305,7 @@ class Distance_2D:
 
         hav(x) = sin²(x/2) = (1 - cos(x))/2
         archav(θ) = 2 * arcsin(√(θ)) = 2 * arctan2(√(θ), √(1-θ))
-        '''
+        """
 
         if useRadian:
             lat1 = m.radians(A[0])
@@ -347,7 +348,7 @@ class Distance_2D:
             return d
 
 class Distance_3D:
-    '''
+    """
     # 3D Distance calculator
     Calculate triaxis distance
         φ = x in Degrees
@@ -355,7 +356,7 @@ class Distance_3D:
         h = z in Meter
 
     *For printing: Not to be confused with \u2212 and \u002d
-    '''
+    """
 
     def Printer(self, Coord: list[int|float], num: str|int = "" ) -> None:
         if str(num) == "":
@@ -377,7 +378,7 @@ class Distance_3D:
         return (FT/3281)*1000
     
     def Distance_2D(self, A: list[int|float], B: list[int|float]) -> int|float:
-        '''
+        """
         The wikipedia (degrees) and generic (radians) way,
         but without any printing and in **degrees**
 
@@ -389,7 +390,7 @@ class Distance_3D:
         archav(θ) = 2 * arcsin(√(θ)) = 2 * arctan2(√(θ), √(1-θ))
 
         return in KM
-        '''
+        """
         lat1 = A[0]
         lon1 = A[1]
         lat2 = B[0]
@@ -409,7 +410,7 @@ class Distance_3D:
         return d
         
     def Distance_Pyth(self, A: list[int|float], B: list[int|float]) -> int|float:
-        '''
+        """
         ACHTUNG: ONLY FOR SHORT DISTANCES (0~1 KM)
 
         Using the Pythagoras method
@@ -420,7 +421,7 @@ class Distance_3D:
         - Find slope or "Hypotenuse" using sqrt(base**2 + height**2)
         
         return in KM
-        '''
+        """
         base = Distance_3D().Distance_2D(A, B)
 
         h1 = self.FT_to_KM(A[2])
@@ -578,7 +579,7 @@ class Distance_3D:
             return Distance_3D().Distance_2D(A, B)
         
         def Distance_ECEF(self, A: list[int|float], B: list[int|float]) -> float:
-            '''
+            """
             Input:
             [φ, λ, h]
             φ and λ are in Degrees
@@ -587,14 +588,14 @@ class Distance_3D:
             #### Step 1: Find prime vertical radius
             N = a / sqrt(1 - e² * sin²(φ))
 
-            #### Step 2: Find ECEF for each axises
+            #### Step 2: Find ECEF for each axis
             X = (N + h) * cos(φ) * cos(λ)
             Y = (N + h) * cos(φ) * sin(λ)
             Z = (N * (1 - e²) + h) * sin(φ)
 
             #### Step 3: Find final 3D Distance
             d = √[(x₂-x₁)² + (y₂-y₁)² + (z₂-₁)²]
-            '''
+            """
             # Constants from WGS84 Ellipsoid
             a = 6_378_137           # semi-major axis in meters
             e_sq = 6.69437999014e-3  # first eccentricity squared

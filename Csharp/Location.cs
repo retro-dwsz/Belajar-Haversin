@@ -1,8 +1,12 @@
 namespace Location;
 
 using System;
-using Distance;
 using Symbols;
+
+enum Unit{
+    Degree,
+    Radian
+}
 
 /// <summary>
 /// Represents a geographical location with latitude, longitude, and associated metadata.
@@ -18,7 +22,7 @@ class Location
     public double Lat = 0;
     public double Lon = 0;
     public string Name = "";
-    public string Unit = "";
+    public Unit Unit;
 
     private string Symbol = "";
     private List<double> Coords = new List<double>();
@@ -34,12 +38,12 @@ class Location
     {
         if (isRadian)
         {
-            Unit = "Radian";
+            Unit = Unit.Radian;
             Symbol = Symbols.RAD;
         }
         else if (!isRadian)
         {
-            Unit = "Degree";
+            Unit = Unit.Degree;
             Symbol = Symbols.DEGREE;
         }
         Lat = aLat;
@@ -63,18 +67,18 @@ class Location
     /// <summary>
     /// Converts the location's coordinates to radians.
     /// </summary>
-    /// <param name="SupressWarning">Suppresses warnings if the coordinates are already in radians (default: false).</param>
-    /// <param name="Force">Forces conversion even if the coordinates are already in radians (default: false).</param>
+    /// <param name="supressWarning">Suppresses warnings if the coordinates are already in radians (default: false).</param>
+    /// <param name="force">Forces conversion even if the coordinates are already in radians (default: false).</param>
     /// <returns>A list containing the converted latitude and longitude in radians.</returns>
-    public List<double> toRadian(bool suppressWarning = false, bool force = false)
+    public List<double> toRadian(bool SupressWarning = false, bool force = false)
     {
-        if (Unit == "Radian")
+        if (Unit == Unit.Radian)
         {
-            if (!suppressWarning && force)
+            if (!SupressWarning && force)
             {
                 Console.WriteLine("Warning: Already in Radians, but forced conversion is enabled.");
             }
-            else if (!suppressWarning)
+            else if (!SupressWarning)
             {
                 Console.WriteLine("Warning: Already in Radians.");
                 return Coords;
@@ -85,7 +89,7 @@ class Location
         Lat = Lat * Math.PI / 180;
         Lon = Lon * Math.PI / 180;
 
-        Unit = "Radian";
+        Unit = Unit.Radian;
         Symbol = Symbols.RAD;
 
         Coords.Clear();
@@ -101,15 +105,15 @@ class Location
     /// <param name="SupressWarning">Suppresses warnings if the coordinates are already in degrees (default: false).</param>
     /// <param name="Force">Forces conversion even if the coordinates are already in degrees (default: false).</param>
     /// <returns>A list containing the converted latitude and longitude in degrees.</returns>
-    public List<double> toDegree(bool suppressWarning = false, bool force = false)
+    public List<double> toDegree(bool SupressWarning = false, bool force = false)
     {
-        if (Unit == "Degree")
+        if (Unit == Unit.Degree)
         {
-            if (!suppressWarning && force)
+            if (!SupressWarning && force)
             {
                 Console.WriteLine("Warning: Already in Degrees, but forced conversion is enabled.");
             }
-            else if (!suppressWarning)
+            else if (!SupressWarning)
             {
                 Console.WriteLine("Warning: Already in Degrees.");
                 return Coords;
@@ -120,7 +124,7 @@ class Location
         Lat = Lat * Math.PI / 180;
         Lon = Lon * Math.PI / 180;
 
-        Unit = "Degree";
+        Unit = Unit.Degree;
         Symbol = Symbols.DEGREE;
 
         Coords.Clear();
@@ -140,42 +144,3 @@ class Location
     }
 };
 
-// UNDER CONSTRUCTION
-class GroundNav
-{
-    /*
-     Default latitude       0 
-     Default longitude      0
-     Default name           MyLocation 
-     Default coords unit    Degrees
-    */
-    public double Lat = 0;
-    public double Lon = 0;
-    public string Name = "";
-    public string Unit = "";
-
-    private string Symbol = "";
-    private List<List<double>> Coords = new List<List<double>>();
-
-    /// <summary>
-    /// Initializes a new instance of the Location class with default or specified values.
-    /// </summary>
-    /// <param name="aLat">Latitude of the location (default: 0).</param>
-    /// <param name="aLon">Longitude of the location (default: 0).</param>
-    /// <param name="aName">Name of the location (default: "MyLocation").</param>
-    /// <param name="isRadian">Indicates whether the coordinates are in radians (default: false).</param>
-    public GroundNav(string aName = "MyLocation", double aLat = 0, double aLon = 0, bool isRadian = false)
-    {
-        if (isRadian)
-        {
-            Unit = "Radian";
-            Symbol = Symbols.RAD;
-        }
-        else if (!isRadian)
-        {
-            Unit = "Degree";
-            Symbol = Symbols.DEGREE;
-        }
-        
-    }
-}

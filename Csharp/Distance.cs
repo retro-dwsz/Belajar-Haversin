@@ -28,7 +28,7 @@ class Distance
         public static double Distance_Deg(Location A, Location B)
         {
             // Print Degree coordinates 
-            Console.WriteLine("Choords in Degrees");
+            Console.WriteLine("Chords in Degrees");
 
             // Latitudes
             double lat1 = A.Lat;
@@ -103,7 +103,7 @@ class Distance
         public static double Distance_Rad(Location A, Location B)
         {
             // Print Radian coordinates 
-            Console.WriteLine("Choords in Radians");
+            Console.WriteLine("Chords in Radians");
             // Latitudes
             double lat1 = A.Lat;
             double lon1 = A.Lon;

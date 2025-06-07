@@ -55,10 +55,6 @@ class Program{
         }
     }
 
-    private static void SimpleGPS() {
-        
-    }
-
     public static void Main() {
         IPB();
     }
