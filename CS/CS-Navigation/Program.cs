@@ -14,8 +14,7 @@ using Distance;                // The main dish along with the main sauce
 using Misc;                    // Very side dish
 
 class Program{
-    private static void IPB()
-    {
+    private static void IPB() {
         /*
         [-6.588457, 106.806200]
         [-6.559582, 106.726720]
