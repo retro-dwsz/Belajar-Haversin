@@ -28,7 +28,7 @@ class Distance
         public static double Distance_Deg(Location A, Location B)
         {
             // Print Degree coordinates 
-            Console.WriteLine("Chords in Degrees");
+            Console.WriteLine($"Coords in Degrees");
 
             // Latitudes
             double lat1 = A.Lat;
@@ -81,7 +81,7 @@ class Distance
             Console.WriteLine($"{Symbols.THETA} = 2 * archav({Symbols.SQRT}(1 - hav)))");
             Console.WriteLine($"{Symbols.THETA} = 2 * arcsin({Symbols.SQRT}({Hav})");
             Console.WriteLine($"{Symbols.THETA} = {T}");
-
+            
             // Find d with theta
             double d = R * T;
             Console.WriteLine($"d = R * θ{Symbols.RAD}");
@@ -103,7 +103,7 @@ class Distance
         public static double Distance_Rad(Location A, Location B)
         {
             // Print Radian coordinates 
-            Console.WriteLine("Chords in Radians");
+            Console.WriteLine("Coords in Radians");
             // Latitudes
             double lat1 = A.Lat;
             double lon1 = A.Lon;

@@ -3,16 +3,16 @@ namespace Location;
 using System;
 using Symbols;
 
-enum Unit{
-    Degree,
-    Radian
-}
 
 /// <summary>
 /// Represents a geographical location with latitude, longitude, and associated metadata.
 /// </summary>
 class Location
 {
+    private enum Unit{
+        Degree,
+        Radian
+    }
     /*
      Default latitude       0 
      Default longitude      0
@@ -141,6 +141,10 @@ class Location
     public List<double> GetCoords()
     {
         return Coords;
+    }
+
+    public Unit GetUnit() {
+        return this.Unit;
     }
 };
 
