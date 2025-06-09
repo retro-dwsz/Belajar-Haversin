@@ -1,6 +1,7 @@
 from enum import Enum
 import math as m
 from os import get_terminal_size as gts
+from typing import Literal
 
 class Unit(Enum):
     Degree = "\u00B0"
@@ -38,9 +39,9 @@ class Misc:
         Width:int = Misc.TerminalSize + offset
         Border:int = (Width - len(Text) - 4) // 2
         
-        Left = f"{Char}" * Border
-        Right = f"{Char}" * (Border + (len(Text) % 2))
-        content = f"{Left}[{Text}]{Right}"
+        Left:str = f"{Char}" * Border
+        Right:str = f"{Char}" * (Border + (len(Text) % 2))
+        content:str = f"{Left}[{Text}]{Right}"
         if Printing:
             return content
         else:
@@ -53,8 +54,7 @@ class Location:
     Lon:float|int = 0
     Coords:list[float|int] = []
     
-    Unit:Unit
-    Symbol:Symbols = ""
+    Symbol:Symbols|str
     
     def __init__(self, Name:str = "MyLocation", Lat:float|int = 0, Lon:float|int = 0, IsRadian:bool = False ) -> None:
         self.Name = Name
@@ -92,7 +92,7 @@ class Location:
         self.Coords.clear()
         self.Coords.extend([self.Lat, self.Lon])
     
-    def toRadian(self, SupressWarning:bool = False, Force:bool = False) -> None:
+    def toDegree(self, SupressWarning:bool = False, Force:bool = False) -> None:
         if self.Unit == Unit.Radian:
             if not SupressWarning and Force:
                 print(f"Warning: Already in Degree, but forced conversion is enabled")
@@ -109,7 +109,7 @@ class Location:
         self.Coords.clear()
         self.Coords.extend([self.Lat, self.Lon])
 
-    def GetCoords(self):
+    def GetCoords(self) -> list[float | int]:
         return self.Coords
 
     def GetUnit(self) -> Unit:
@@ -213,12 +213,12 @@ class Distance:
         print(f"hav({Symbols.THETA.value}) = {Hav}")
 
         T:float = 2 * m.asin(m.sqrt(Hav))
-        print(f"{Symbols.THETA.value} = 2 * archav({Symbols.SQRT.value}(1 - hav)))")
+        print(f"{Symbols.THETA.value} = archav({Symbols.SQRT.value}hav)")
         print(f"{Symbols.THETA.value} = 2 * arcsin({Symbols.SQRT.value}({Hav})")
         print(f"{Symbols.THETA.value} = {T}")
 
         d:float = Distance.R * T
-        print(f"d = R * θ{Symbols.RAD.value}")
+        print(f"d = R * {Symbols.THETA}{Symbols.RAD.value}")
         print(f"d = {Distance.R} * {T}")
         print(f"d {Symbols.APRX.value} {d} KM")
         print(f"d {Symbols.APRX.value} {round(d, 2)} KM")
@@ -266,13 +266,13 @@ class Distance:
         print(f"hav({Symbols.THETA.value}) = {hav1} + {cos1} * {cos2} * {hav2}")
         print(f"hav({Symbols.THETA.value}) = {Hav}")
 
-        T:float = 2 * m.asin(m.sqrt(Hav))
-        print(f"{Symbols.THETA.value} = 2 * archav({Symbols.SQRT.value}(1 - hav)))")
+        T:float = 2 * m.atan2(m.sqrt(Hav), m.sqrt(1-Hav))
+        print(f"{Symbols.THETA.value} = archav({Symbols.SQRT.value}hav)")
         print(f"{Symbols.THETA.value} = 2 * arcsin({Symbols.SQRT.value}({Hav})")
         print(f"{Symbols.THETA.value} = {T}")
 
         d:float = Distance.R * T
-        print(f"d = R * θ{Symbols.RAD.value}")
+        print(f"d = R * {Symbols.THETA}{Symbols.RAD.value}")
         print(f"d = {Distance.R} * {T}")
         print(f"d {Symbols.APRX.value} {d} KM")
         print(f"d {Symbols.APRX.value} {round(d, 2)} KM")

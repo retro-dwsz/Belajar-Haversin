@@ -70,7 +70,7 @@ class Location
     /// <param name="supressWarning">Suppresses warnings if the coordinates are already in radians (default: false).</param>
     /// <param name="force">Forces conversion even if the coordinates are already in radians (default: false).</param>
     /// <returns>A list containing the converted latitude and longitude in radians.</returns>
-    public List<double> toRadian(bool SupressWarning = false, bool force = false)
+    public void toRadian(bool SupressWarning = false, bool force = false)
     {
         if (Unit == Unit.Radian)
         {
@@ -81,7 +81,7 @@ class Location
             else if (!SupressWarning)
             {
                 Console.WriteLine("Warning: Already in Radians.");
-                return Coords;
+                // return Coords;
             }
         }
 
@@ -95,8 +95,6 @@ class Location
         Coords.Clear();
         Coords.Add(Lat);
         Coords.Add(Lon);
-
-        return Coords;
     }
 
     /// <summary>
@@ -105,7 +103,7 @@ class Location
     /// <param name="SupressWarning">Suppresses warnings if the coordinates are already in degrees (default: false).</param>
     /// <param name="Force">Forces conversion even if the coordinates are already in degrees (default: false).</param>
     /// <returns>A list containing the converted latitude and longitude in degrees.</returns>
-    public List<double> toDegree(bool SupressWarning = false, bool force = false)
+    public void toDegree(bool SupressWarning = false, bool force = false)
     {
         if (Unit == Unit.Degree)
         {
@@ -116,7 +114,7 @@ class Location
             else if (!SupressWarning)
             {
                 Console.WriteLine("Warning: Already in Degrees.");
-                return Coords;
+                // return Coords;
             }
         }
 
@@ -130,8 +128,6 @@ class Location
         Coords.Clear();
         Coords.Add(Lat);
         Coords.Add(Lon);
-
-        return Coords;
     }
 
     /// <summary>
