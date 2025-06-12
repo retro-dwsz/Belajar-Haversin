@@ -14,15 +14,6 @@ using Distance;                // The main dish along with the main sauce
 using Misc;                    // Very side dish
 
 class Program{
-    private static bool CheckEqual(dynamic Var1, dynamic Var2) {
-        if (Var1 == Var2) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-    
     private static void IPB() {
         /*
         [-6.588457, 106.806200]
@@ -51,7 +42,14 @@ class Program{
         Console.WriteLine($"Degrees = {D} KM");
         Console.WriteLine($"Radians = {R} KM");
 
-        Console.WriteLine(CheckEqual(D, R) ? "APPROVED!" : "meh");
+        if (D == R)
+        {
+            Console.WriteLine("APPROVED!");
+        }
+        else
+        {
+            Console.WriteLine("meh");
+        }
     }
 
     public static void Main() {

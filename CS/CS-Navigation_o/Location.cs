@@ -9,7 +9,7 @@ using Symbols;
 /// </summary>
 class Location
 {
-    public enum Unit{
+    private enum Unit{
         Degree,
         Radian
     }
@@ -22,7 +22,7 @@ class Location
     public double Lat = 0;
     public double Lon = 0;
     public string Name = "";
-    public Unit LUnit;
+    public Unit Unit;
 
     private string Symbol = "";
     private List<double> Coords = new List<double>();
@@ -38,12 +38,12 @@ class Location
     {
         if (isRadian)
         {
-            LUnit = Unit.Radian;
+            Unit = Unit.Radian;
             Symbol = Symbols.RAD;
         }
         else if (!isRadian)
         {
-            LUnit = Unit.Degree;
+            Unit = Unit.Degree;
             Symbol = Symbols.DEGREE;
         }
         Lat = aLat;
@@ -59,7 +59,7 @@ class Location
     /// </summary>
     public void Printer()
     {
-        Console.WriteLine($"{Name} Coords in {LUnit}");
+        Console.WriteLine($"{Name} Coords in {Unit}");
         Console.WriteLine($"{Symbols.PHI} = {Lat}{Symbol}");
         Console.WriteLine($"{Symbols.LAMBDA} = {Lon}{Symbol}");
     }
@@ -67,12 +67,12 @@ class Location
     /// <summary>
     /// Converts the location's coordinates to radians.
     /// </summary>
-    /// <param name="SupressWarning">Suppresses warnings if the coordinates are already in radians (default: false).</param>
+    /// <param name="supressWarning">Suppresses warnings if the coordinates are already in radians (default: false).</param>
     /// <param name="force">Forces conversion even if the coordinates are already in radians (default: false).</param>
     /// <returns>A list containing the converted latitude and longitude in radians.</returns>
     public void toRadian(bool SupressWarning = false, bool force = false)
     {
-        if (LUnit == Unit.Radian)
+        if (Unit == Unit.Radian)
         {
             if (!SupressWarning && force)
             {
@@ -89,7 +89,7 @@ class Location
         Lat = Lat * Math.PI / 180;
         Lon = Lon * Math.PI / 180;
 
-        LUnit = Unit.Radian;
+        Unit = Unit.Radian;
         Symbol = Symbols.RAD;
 
         Coords.Clear();
@@ -103,11 +103,11 @@ class Location
     /// <param name="SupressWarning">Suppresses warnings if the coordinates are already in degrees (default: false).</param>
     /// <param name="Force">Forces conversion even if the coordinates are already in degrees (default: false).</param>
     /// <returns>A list containing the converted latitude and longitude in degrees.</returns>
-    public void toDegree(bool SupressWarning = false, bool Force = false)
+    public void toDegree(bool SupressWarning = false, bool force = false)
     {
-        if (LUnit == Unit.Degree)
+        if (Unit == Unit.Degree)
         {
-            if (!SupressWarning && Force)
+            if (!SupressWarning && force)
             {
                 Console.WriteLine("Warning: Already in Degrees, but forced conversion is enabled.");
             }
@@ -122,7 +122,7 @@ class Location
         Lat = Lat * Math.PI / 180;
         Lon = Lon * Math.PI / 180;
 
-        LUnit = Unit.Degree;
+        Unit = Unit.Degree;
         Symbol = Symbols.DEGREE;
 
         Coords.Clear();
@@ -140,7 +140,7 @@ class Location
     }
 
     public Unit GetUnit() {
-        return LUnit;
+        return this.Unit;
     }
 };
 

@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "dY/FedMhk/w=",
+  "dgSpecHash": "tIxRDpPt0bM=",
   "success": true,
   "projectFilePath": "D:\\Code\\!Docs\\Obsolete Trig\\_Belajar Haversine\\CS\\CS-Navigation\\CS-Navigation.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\David Sirait\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.6\\microsoft.net.illink.tasks.9.0.6.nupkg.sha512",
+    "C:\\Users\\David Sirait\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\9.0.6\\microsoft.netcore.app.runtime.win-x64.9.0.6.nupkg.sha512",
+    "C:\\Users\\David Sirait\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\9.0.6\\microsoft.windowsdesktop.app.runtime.win-x64.9.0.6.nupkg.sha512",
+    "C:\\Users\\David Sirait\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\9.0.6\\microsoft.aspnetcore.app.runtime.win-x64.9.0.6.nupkg.sha512"
+  ],
   "logs": []
 }
