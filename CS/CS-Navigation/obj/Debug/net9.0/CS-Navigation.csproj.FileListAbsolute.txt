@@ -1,0 +1,15 @@
+D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\obj\Debug\net9.0\CS-Navigation.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\obj\Debug\net9.0\CS-Navigation.AssemblyInfoInputs.cache
+D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\obj\Debug\net9.0\CS-Navigation.AssemblyInfo.cs
+D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\obj\Debug\net9.0\CS-Navigation.csproj.CoreCompileInputs.cache
+D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\obj\Debug\net9.0\CS-Navigation.sourcelink.json
+D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\bin\Debug\net9.0\CS-Navigation.exe
+D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\bin\Debug\net9.0\CS-Navigation.deps.json
+D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\bin\Debug\net9.0\CS-Navigation.runtimeconfig.json
+D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\bin\Debug\net9.0\CS-Navigation.dll
+D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\bin\Debug\net9.0\CS-Navigation.pdb
+D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\obj\Debug\net9.0\CS-Navigation.dll
+D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\obj\Debug\net9.0\refint\CS-Navigation.dll
+D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\obj\Debug\net9.0\CS-Navigation.pdb
+D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\obj\Debug\net9.0\CS-Navigation.genruntimeconfig.cache
+D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\obj\Debug\net9.0\ref\CS-Navigation.dll
