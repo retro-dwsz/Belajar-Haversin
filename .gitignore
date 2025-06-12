@@ -40,10 +40,6 @@ dist/
 *.exe
 
 # C++ IDE / compiler output
-Debug/
-Release/
-x64/
-x86/
 ipch/
 *.suo
 *.user
@@ -61,8 +57,6 @@ make.log
 
 # Build directory
 build/
-bin/
-Cppbin/
 dist/
 
 # VSCode, PyCharm, etc.
