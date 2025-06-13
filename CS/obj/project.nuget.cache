@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "LA8Ub1I044w=",
+  "dgSpecHash": "F2//drECHAE=",
   "success": true,
-  "projectFilePath": "D:\\Code\\!Docs\\Obsolete Trig\\_Belajar Haversine\\CS\\CSProj.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Code\\!Docs\\Obsolete Trig\\_Belajar Haversine\\CS\\CS-Navigation.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\David Sirait\\.nuget\\packages\\microsoft.dotnet.ilcompiler\\9.0.6\\microsoft.dotnet.ilcompiler.9.0.6.nupkg.sha512",
+    "C:\\Users\\David Sirait\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.6\\microsoft.net.illink.tasks.9.0.6.nupkg.sha512",
+    "C:\\Users\\David Sirait\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\9.0.6\\runtime.win-x64.microsoft.dotnet.ilcompiler.9.0.6.nupkg.sha512"
+  ],
   "logs": []
 }

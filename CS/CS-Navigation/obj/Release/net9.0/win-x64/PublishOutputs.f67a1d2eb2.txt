@@ -1,2 +1,0 @@
-D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\bin\Release\net9.0\win-x64\publish\CS-Navigation.pdb
-D:\Code\!Docs\Obsolete Trig\_Belajar Haversine\CS\CS-Navigation\bin\Release\net9.0\win-x64\publish\CS-Navigation.exe
