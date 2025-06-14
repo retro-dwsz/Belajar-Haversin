@@ -32,8 +32,8 @@ dist/
 *.Pli
 *.ilk
 *.exp
-*.pdb
-*.dll
+#*.pdb
+#*.dll
 *.dylib
 
 # Executables (Windows)
@@ -56,8 +56,8 @@ Makefile
 make.log
 
 # Build directory
-build/
-dist/
+#build/
+#dist/
 
 # VSCode, PyCharm, etc.
 .vscode/
@@ -81,9 +81,9 @@ $RECYCLE.BIN/
 *.old
 *.orig
 *~
-*.pyc
-*.pyo
-*.pyd
+#*.pyc
+#*.pyo
+#*.pyd
 
 # Editor fold
 *.vs~
@@ -102,7 +102,7 @@ $RECYCLE.BIN/
 .Trashes
 
 # Logs
-*.log
+#*.log
 nohup.out
 
 # Unit test / coverage
@@ -110,7 +110,7 @@ coverage/
 htmlcov/
 *.coveragerc
 .pytest_cache/
-__pycache__/
+#__pycache__/
 
 # Compressed
 .rar
