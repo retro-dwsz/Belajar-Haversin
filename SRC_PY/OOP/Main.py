@@ -1,7 +1,7 @@
 from enum import Enum
 import math as m
 from os import get_terminal_size as gts
-from typing import Literal
+# from typing import Literal
 
 class Unit(Enum):
     Degree = "\u00B0"
@@ -281,25 +281,24 @@ class Distance:
     
     @staticmethod
     def Distance(A:Location, B:Location, IsRadian:bool = False) -> float:
-        lat1:float = 0
-        lon1:float = 0
-        lat2:float = 0
-        lon2:float = 0
-
-        Dlat:float = 0
-        Dlon:float = 0
-
-        hav1:float = 0
-        hav2:float = 0
-        cos1:float = 0
-        cos2:float = 0
-
-        Hav:float = 0
-        T:float = 0
-        d:float = 0
+        # lat1:float = 0
+        # lon1:float = 0
+        # lat2:float = 0
+        # lon2:float = 0
+        # 
+        # Dlat:float = 0
+        # Dlon:float = 0
+        # 
+        # hav1:float = 0
+        # hav2:float = 0
+        # cos1:float = 0
+        # cos2:float = 0
+        # 
+        # Hav:float = 0
+        # T:float = 0
+        # d:float = 0
 
         if not IsRadian:
-            
             lat1 = A.Lat
             lon1 = A.Lon
             lat2 = B.Lat
