@@ -8,7 +8,7 @@ using Location;
 
 class Distance
 {
-    public static int R = 6378;
+    public static int R = 6371;
 
     public class Distance_2D
     {
