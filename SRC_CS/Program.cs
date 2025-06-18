@@ -30,6 +30,8 @@ class Program{
         [-6.559582, 106.726720]
         */
 
+        Console.WriteLine($"Current terminal size: {Misc.TerminalSize}");
+
         Location SV_IPB = new Location("SV IPB", -6.588457, 106.806200, isRadian: false);
         Location Danau_IPB = new Location("Danau IPB", -6.559582, 106.726720, isRadian: false);
 

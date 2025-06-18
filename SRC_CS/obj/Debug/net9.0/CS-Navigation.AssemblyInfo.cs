@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CS-Navigation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff35f812a8f8b8074d889ed3165958cb7b3431a2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d30fc77fbe7fc52c2f2c726f9c804a9079f77e6a")]
 [assembly: System.Reflection.AssemblyProductAttribute("CS-Navigation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CS-Navigation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

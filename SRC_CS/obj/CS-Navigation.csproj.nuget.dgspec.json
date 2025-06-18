@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Code\\!Docs\\Obsolete Trig\\_Belajar Haversine\\CS\\CS-Navigation.csproj": {}
+    "D:\\Code\\!Docs\\Obsolete Trig\\_Belajar Haversine\\SRC_CS\\CS-Navigation.csproj": {}
   },
   "projects": {
-    "D:\\Code\\!Docs\\Obsolete Trig\\_Belajar Haversine\\CS\\CS-Navigation.csproj": {
+    "D:\\Code\\!Docs\\Obsolete Trig\\_Belajar Haversine\\SRC_CS\\CS-Navigation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Code\\!Docs\\Obsolete Trig\\_Belajar Haversine\\CS\\CS-Navigation.csproj",
+        "projectUniqueName": "D:\\Code\\!Docs\\Obsolete Trig\\_Belajar Haversine\\SRC_CS\\CS-Navigation.csproj",
         "projectName": "CS-Navigation",
-        "projectPath": "D:\\Code\\!Docs\\Obsolete Trig\\_Belajar Haversine\\CS\\CS-Navigation.csproj",
+        "projectPath": "D:\\Code\\!Docs\\Obsolete Trig\\_Belajar Haversine\\SRC_CS\\CS-Navigation.csproj",
         "packagesPath": "C:\\Users\\David Sirait\\.nuget\\packages\\",
-        "outputPath": "D:\\Code\\!Docs\\Obsolete Trig\\_Belajar Haversine\\CS\\obj\\",
+        "outputPath": "D:\\Code\\!Docs\\Obsolete Trig\\_Belajar Haversine\\SRC_CS\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "D:\\Code\\MSVC\\MSVC_IDE_Shared\\NuGetPackages"

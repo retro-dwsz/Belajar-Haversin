@@ -23,8 +23,8 @@ dist/
 *.log
 
 # C++ object files and binaries
-*.o
-*.obj
+# *.o
+# *.obj
 *.lo
 *.la
 *.lai
@@ -66,6 +66,7 @@ make.log
 *.swo
 *.sublime-project
 *.sublime-workspace
+*.code-workspace
 
 # OS generated files
 .DS_Store
