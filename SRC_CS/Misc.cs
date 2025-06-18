@@ -119,6 +119,7 @@ class ColorTx
         Console.ResetColor(); // Don't leave your terminal cursed
     }
 
+    // Kinda not useful
     public static void Debug(string text)
     {
         Console.Write("DEBUG RAW: ");
