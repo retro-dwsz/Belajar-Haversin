@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CS-Navigation")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52b53312cd40dd533e55a7030f6a10104842fe9b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ab37818bd5c4304da21106c837ce6dee0fd5688")]
 [assembly: System.Reflection.AssemblyProductAttribute("CS-Navigation")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CS-Navigation")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

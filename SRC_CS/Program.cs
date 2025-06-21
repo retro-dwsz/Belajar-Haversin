@@ -3,16 +3,16 @@
 namespace CS_Navigation;
 
 using System;                   // System sauces
-using System.ComponentModel;
-using System.Runtime;
+// using System.ComponentModel;
+// using System.Runtime;
+// using System.Drawing;
 
 /**/
 using Location;                // Main sauce I
-using Haversine;               // Main sauce II
-using Symbols;                 // Helper of main sauce
+// using Haversine;               // Main sauce II
+// using Symbols;                 // Helper of main sauce
 using Distance;                // The main dish along with the main sauce
 using Misc;                    // Very side dish
-using System.Drawing;
 
 class Program{
     private static bool CheckEqual(object Var1, object Var2) {
@@ -104,7 +104,6 @@ class Program{
         Console.ResetColor();
         WikipediaExample();
         Console.WriteLine(Misc.Repeater("=", Misc.TerminalSize));
-
     }
 }
 
