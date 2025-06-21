@@ -1,0 +1,6 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Publish CS-Navigation to folder" type="DotNetFolderPublish" factoryName="Publish to folder" editBeforeRun="true" focusToolWindowBeforeRun="true" singleton="false">
+    <riderPublish delete_existing_files="true" include_all_content_for_self_extract="true" include_native_libs_for_self_extract="true" produce_single_file="true" ready_to_run="true" runtime="win-x64" self_contained="true" target_folder="$PROJECT_DIR$/Public Binary" target_framework="net9.0" trim_unused_assemblies="true" uuid_high="-8768057585893772900" uuid_low="-2288404007493154683" />
+    <method v="2" />
+  </configuration>
+</component>

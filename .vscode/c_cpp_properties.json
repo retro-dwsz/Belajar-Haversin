@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/**"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "compilerPath": "D:/Code/LLVM/llvm-mingw-20250305-ucrt-x86_64/bin/clang++.exe"
+        }
+    ],
+    "version": 4
+}
