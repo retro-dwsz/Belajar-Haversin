@@ -18,7 +18,7 @@
       "System.Globalization.PredefinedCulturesOnly": true,
       "System.Reflection.Metadata.MetadataUpdater.IsSupported": false,
       "System.Resources.ResourceManager.AllowCustomResourceTypes": false,
-      "System.Resources.UseSystemResourceKeys": false,
+      "System.Resources.UseSystemResourceKeys": true,
       "System.Runtime.CompilerServices.RuntimeFeature.IsDynamicCodeSupported": false,
       "System.Runtime.InteropServices.BuiltInComInterop.IsSupported": false,
       "System.Runtime.InteropServices.EnableConsumingManagedCodeFromNativeHosting": false,

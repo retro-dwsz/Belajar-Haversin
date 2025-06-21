@@ -2,6 +2,7 @@
 
 namespace Haversine;
 
+using System.Runtime.CompilerServices;
 using Symbols;
 
 /// <summary>
@@ -16,6 +17,7 @@ public class Haversine
     /// <param name="deg">Angle in degrees.</param>
     /// <param name="Printing">Optional. If true, prints intermediate values to console.</param>
     /// <returns>The angle converted to radians.</returns>
+    [MethodImpl(MethodImplOptions.AggressiveOptimization)]
     public static double deg2rad(double deg, bool Printing = false)
     {
         double var = Math.PI / 180 * deg;
@@ -33,6 +35,7 @@ public class Haversine
     /// <param name="x">Angle in radians.</param>
     /// <param name="Printing">Optional. If true, logs intermediate steps to console.</param>
     /// <returns>Haversine value (double).</returns>
+    [MethodImpl(MethodImplOptions.AggressiveOptimization)]
     public static double Hav_rad(double x, bool Printing = false)
     {
         double Cos = 1 - Math.Cos(x);
@@ -55,6 +58,7 @@ public class Haversine
     /// <param name="x">Angle in degrees.</param>
     /// <param name="Printing">Optional. If true, logs intermediate steps to console.</param>
     /// <returns>Haversine value (double).</returns>
+    [MethodImpl(MethodImplOptions.AggressiveOptimization)]
     public static double Hav_deg(double x, bool Printing = false)
     {
         // radian-ize the Angle
@@ -82,6 +86,7 @@ public class Haversine
     /// <param name="isRadian">If true, assumes input is in radians; otherwise, treats it as degrees.</param>
     /// <param name="Printing">Optional. If true, logs intermediate steps to console.</param>
     /// <returns>Haversine value (double).</returns>
+    [MethodImpl(MethodImplOptions.AggressiveOptimization)]
     public static double Hav(double x, bool isRadian = false, bool Printing = false)
     {
         if (isRadian) { }

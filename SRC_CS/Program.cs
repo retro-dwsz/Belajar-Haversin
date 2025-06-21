@@ -1,22 +1,19 @@
 ﻿/* Program.cs */
-
 namespace CS_Navigation;
 
 using System;                   // System sauces
-// using System.ComponentModel;
-// using System.Runtime;
-// using System.Drawing;
+using System.Runtime.CompilerServices;  // Super Optimization
 
 /**/
 using Location;                // Main sauce I
-// using Haversine;               // Main sauce II
-// using Symbols;                 // Helper of main sauce
+// using Haversine;            // Main sauce II
+// using Symbols;              // Helper of main sauce
 using Distance;                // The main dish along with the main sauce
 using Misc;                    // Very side dish
 
 class Program{
     private static bool CheckEqual(object Var1, object Var2) {
-        return object.Equals(Var1, Var2);
+        return Equals(Var1, Var2);
         // if (Var1 == Var2) {
         //     return true;
         // }
@@ -25,7 +22,8 @@ class Program{
         // }
     }
     
-    private static void IPB() {
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static void IPB() {
         /*
         [-6.588457, 106.806200]
         [-6.559582, 106.726720]
@@ -58,7 +56,8 @@ class Program{
         Console.WriteLine(CheckEqual(D, R) ? "APPROVED!" : "meh");
     }
 
-    private static void WikipediaExample()
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static void WikipediaExample()
     {
         Location WhiteHouse = new Location("White House WDC", 38.898, 77.037);
         Location EffielTowr = new Location("Effiel Tower à Paris", 48.858, 2.294);
@@ -88,6 +87,7 @@ class Program{
     {
         string TITLE = ColorTx.ColorStr("Haversine Implementation!");
         Console.WriteLine(Misc.PrintMid(TITLE, ' ', LeftBorder:' ', RightBorder:' '));
+        Console.WriteLine($"Terminal size: {Misc.TerminalSize}");
         
         // Save current color
         // ConsoleColor CurrentColor = Console.BackgroundColor;
@@ -104,6 +104,7 @@ class Program{
         Console.ResetColor();
         WikipediaExample();
         Console.WriteLine(Misc.Repeater("=", Misc.TerminalSize));
+
     }
 }
 

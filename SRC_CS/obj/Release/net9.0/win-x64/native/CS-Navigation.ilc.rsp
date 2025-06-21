@@ -184,7 +184,7 @@ obj\Release\net9.0\win-x64\CS-Navigation.dll
 --initassembly:System.Private.CoreLib
 --initassembly:System.Private.StackTraceMetadata
 --initassembly:System.Private.TypeLoader
---initassembly:System.Private.Reflection.Execution
+--initassembly:System.Private.DisabledReflection
 --directpinvoke:System.Globalization.Native
 --directpinvoke:System.IO.Compression.Native
 --directpinvokelist:C:\Users\David Sirait\.nuget\packages\microsoft.dotnet.ilcompiler\9.0.6\build\WindowsAPIs.txt
@@ -198,7 +198,7 @@ obj\Release\net9.0\win-x64\CS-Navigation.dll
 --feature:System.Globalization.PredefinedCulturesOnly=true
 --feature:System.Reflection.Metadata.MetadataUpdater.IsSupported=false
 --feature:System.Resources.ResourceManager.AllowCustomResourceTypes=false
---feature:System.Resources.UseSystemResourceKeys=false
+--feature:System.Resources.UseSystemResourceKeys=true
 --feature:System.Runtime.CompilerServices.RuntimeFeature.IsDynamicCodeSupported=false
 --feature:System.Runtime.InteropServices.BuiltInComInterop.IsSupported=false
 --feature:System.Runtime.InteropServices.EnableConsumingManagedCodeFromNativeHosting=false
@@ -221,7 +221,7 @@ obj\Release\net9.0\win-x64\CS-Navigation.dll
 --runtimeknob:System.Globalization.PredefinedCulturesOnly=true
 --runtimeknob:System.Reflection.Metadata.MetadataUpdater.IsSupported=false
 --runtimeknob:System.Resources.ResourceManager.AllowCustomResourceTypes=false
---runtimeknob:System.Resources.UseSystemResourceKeys=false
+--runtimeknob:System.Resources.UseSystemResourceKeys=true
 --runtimeknob:System.Runtime.CompilerServices.RuntimeFeature.IsDynamicCodeSupported=false
 --runtimeknob:System.Runtime.InteropServices.BuiltInComInterop.IsSupported=false
 --runtimeknob:System.Runtime.InteropServices.EnableConsumingManagedCodeFromNativeHosting=false
@@ -236,7 +236,9 @@ obj\Release\net9.0\win-x64\CS-Navigation.dll
 --runtimeknob:System.Linq.Expressions.CanEmitObjectArrayDelegate=false
 --runtimeknob:RUNTIME_IDENTIFIER=win-x64
 --stacktracedata
---scanreflection
+--reflectiondata:none
+--feature:System.Collections.Generic.DefaultComparers=false
+--feature:System.Reflection=false
 --win32resourcemodule:CS-Navigation
 --nowarn:"1701;1702;IL2121;1701;1702"
 --warnaserr:";NU1605;SYSLIB0011"
@@ -244,4 +246,5 @@ obj\Release\net9.0\win-x64\CS-Navigation.dll
 --nosinglewarnassembly:CS-Navigation
 --resilient
 --generateunmanagedentrypoints:System.Private.CoreLib
+--feature:System.Reflection.IsReflectionExecutionAvailable=false
 --feature:System.Diagnostics.Debugger.IsSupported=false

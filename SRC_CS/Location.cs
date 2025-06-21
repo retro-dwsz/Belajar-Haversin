@@ -1,8 +1,9 @@
+// Location.cs
 namespace Location;
 
 using System;
+using System.Runtime.CompilerServices;
 using Symbols;
-
 
 /// <summary>
 /// Represents a geographical location with latitude, longitude, and associated metadata.
@@ -70,6 +71,7 @@ class Location
     /// <param name="SupressWarning">Suppresses warnings if the coordinates are already in radians (default: false).</param>
     /// <param name="force">Forces conversion even if the coordinates are already in radians (default: false).</param>
     /// <returns>A list containing the converted latitude and longitude in radians.</returns>
+    [MethodImpl(MethodImplOptions.AggressiveOptimization)]
     public void toRadian(bool SupressWarning = false, bool force = false)
     {
         if (LUnit == Unit.Radian)
@@ -103,6 +105,7 @@ class Location
     /// <param name="SupressWarning">Suppresses warnings if the coordinates are already in degrees (default: false).</param>
     /// <param name="Force">Forces conversion even if the coordinates are already in degrees (default: false).</param>
     /// <returns>A list containing the converted latitude and longitude in degrees.</returns>
+    [MethodImpl(MethodImplOptions.AggressiveOptimization)]
     public void toDegree(bool SupressWarning = false, bool Force = false)
     {
         if (LUnit == Unit.Degree)
@@ -144,3 +147,4 @@ class Location
     }
 };
 
+// End Location.cs
