@@ -1,7 +1,7 @@
 ﻿/* Program.cs */
 namespace CS_Navigation;
 
-using System;                   // System sauces
+using System;                           // System sauces
 using System.Runtime.CompilerServices;  // Super Optimization
 
 /**/

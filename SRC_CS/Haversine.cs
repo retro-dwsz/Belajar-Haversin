@@ -1,9 +1,9 @@
 /* Haversine.cs */
 
 namespace Haversine;
-
-using System.Runtime.CompilerServices;
 using Symbols;
+
+using System.Runtime.CompilerServices;  // Super Optimization
 
 /// <summary>
 /// Provides methods to calculate the haversine function used in geographical distance calculations.
@@ -11,6 +11,11 @@ using Symbols;
 /// </summary>
 public class Haversine
 {
+    public static double Normalize(double lon)
+    {
+        return (lon + 540) % 360 - 180;
+    }
+
     /// <summary>
     /// Converts an angle from degrees to radians.
     /// </summary>

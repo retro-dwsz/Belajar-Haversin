@@ -2,8 +2,9 @@
 namespace Location;
 
 using System;
-using System.Runtime.CompilerServices;
 using Symbols;
+
+using System.Runtime.CompilerServices;  // Super Optimization
 
 /// <summary>
 /// Represents a geographical location with latitude, longitude, and associated metadata.
@@ -35,6 +36,7 @@ class Location
     /// <param name="aLon">Longitude of the location (default: 0).</param>
     /// <param name="aName">Name of the location (default: "MyLocation").</param>
     /// <param name="isRadian">Indicates whether the coordinates are in radians (default: false).</param>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public Location(string aName = "MyLocation", double aLat = 0, double aLon = 0, bool isRadian = false)
     {
         if (isRadian)
@@ -58,6 +60,7 @@ class Location
     /// <summary>
     /// Prints the location's details in a human-readable format.
     /// </summary>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public void Printer()
     {
         Console.WriteLine($"{Name} Coords in {LUnit}");

@@ -1,8 +1,9 @@
 /* Misc.cs */
 
-using System.Text;
-
 namespace Misc;
+
+using System.Text;
+using System.Runtime.CompilerServices;  // Super Optimization
 
 /// <summary>
 /// Provides utility methods for string manipulation and console formatting.
@@ -27,6 +28,7 @@ public static class Misc
     /// <code>
     /// string result = Misc.Repeater("hello", 3); // Returns "hellohellohello"
     /// </code>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static string Repeater(object str, int repetitions = 1)
     {
         StringBuilder sb = new StringBuilder();
@@ -55,6 +57,7 @@ public static class Misc
     /// // ------------------[Welcome]-------------------
     /// </code>
     /// </example>
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static string PrintMid(string Text = "Hello", char Char = '=', int offset = 2, char LeftBorder = '[', char RightBorder = ']', bool Printing = false)
     {
         int ConsoleWidth = TerminalSize + offset;               // Get width + offset
@@ -84,7 +87,8 @@ class ColorTx
 {
     public enum Position { Back, Fore }
 
-    public static string ColorStr(string text = "Hello, world!", uint hex=0xFF109696, Position pos = Position.Fore)
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    public static string ColorStr(string text = "Hello, world!", uint hex = 0xFF109696, Position pos = Position.Fore)
     {
         // Parse RGB from 0xAARRGGBB or 0xRRGGBB
         byte a = 255, r, g, b;
@@ -113,6 +117,7 @@ class ColorTx
         return text;
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void Print(uint hex, Position pos, string text)
     {
         Console.WriteLine(ColorStr(text, hex, pos));
@@ -120,6 +125,7 @@ class ColorTx
     }
 
     // Kinda not useful
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void Debug(string text)
     {
         Console.Write("DEBUG RAW: ");
@@ -137,6 +143,7 @@ class ColorTx
         Console.WriteLine();
     }
 
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
     private static ConsoleColor RgbToConsoleColor(byte r, byte g, byte b)
     {
         // Naive RGB -> ConsoleColor mapping
