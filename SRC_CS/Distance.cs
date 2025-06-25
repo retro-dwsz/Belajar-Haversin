@@ -51,8 +51,8 @@ class Distance
             // Delta lambda
             double Dlon = lon2 - lon1;
             Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {Symbols.LAMBDA}{Symbols.SB2} - {Symbols.LAMBDA}{Symbols.SB1}");
-            Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {lat2} - {lat1}");
-            Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {Dlat}\n~~~");
+            Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {lon2} - {lon1}");
+            Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {Dlon}\n~~~");
 
             /*
             Convert to Radians and Build hav(θ) formula
@@ -125,8 +125,8 @@ class Distance
             // Delta lambda
             double Dlon = lon2 - lon1;
             Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {Symbols.LAMBDA}{Symbols.SB2} - {Symbols.LAMBDA}{Symbols.SB1}");
-            Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {lat2} - {lat1}");
-            Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {Dlat}\n~~~");
+            Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {lon2} - {lon1}");
+            Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {Dlon}\n~~~");
 
             // Build hav(θ) formula
             Console.WriteLine($"~  Hav({Symbols.DELTA}{Symbols.PHI})");
