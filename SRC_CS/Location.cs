@@ -122,8 +122,8 @@ class Location
         }
 
         // Perform the actual conversion
-        Lat = Lat * Math.PI / 180;
-        Lon = Lon * Math.PI / 180;
+        Lat = Lat * 180/Math.PI;
+        Lon = Lon * 180/Math.PI;
 
         LUnit = Unit.Degree;
         Symbol = Symbols.DEGREE;
