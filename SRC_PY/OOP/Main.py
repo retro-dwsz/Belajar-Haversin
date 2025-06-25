@@ -333,7 +333,31 @@ class Distance:
             d = Distance.R * T
             return d
 
-        
+def ProgramMain(A:Location = Location(), B:Location = Location(), tag:str = "") -> None:
+    if tag != "":
+        Misc.PrintMid(tag)
+
+    A.Printer()
+    B.Printer()
+
+    Misc.PrintMid("Degree", "-")
+    D:float = Distance.Distance_Deg(A, B)
+
+    Misc.PrintMid("Radian", "-")
+    A.toRadian()
+    B.toRadian()
+
+    R:float = Distance.Distance_Rad(A, B)
+
+    print(f"Degrees = {D} KM")
+    print(f"Radians = {R} KM")
+
+    if D == R:
+        print("APPROVED!")
+    else:
+        print("meh")
+
+
 class Main:
     @staticmethod
     def IPB():
@@ -360,6 +384,33 @@ class Main:
             print("APPROVED!")
         else:
             print("meh")
-            
+
+    @staticmethod
+    def WIkipediaExample() -> None:
+        WhiteHouse:Location = Location("White House WDC", 38.898, 77.037)
+        EiffelTowr:Location = Location("Effiel Tower à Paris", 48.858, 2.294)
+
+        WhiteHouse.Printer()
+        EiffelTowr.Printer()
+
+        Misc.PrintMid("Degree", "-")
+        D:float = Distance.Distance_Deg(WhiteHouse, EiffelTowr)
+
+        Misc.PrintMid("Radian", "-")
+        
+        WhiteHouse.toRadian()
+        EiffelTowr.toRadian()
+        R:float = Distance.Distance_Deg(WhiteHouse, EiffelTowr)
+
+        print(f"Degrees = {D} KM")
+        print(f"Radians = {R} KM")
+        
+        if D == R:
+            print("APPROVED!")
+        else:
+            print("meh")
+        
+
 if __name__ == "__main__":
-    Main.IPB()
+    ProgramMain(Location("SV IPB", -6.588457, 106.806200, IsRadian = False), Location("Danau IPB", -6.559582, 106.726720, IsRadian = False))
+    ProgramMain(Location("White House WDC", 38.898, 77.037, IsRadian= False), Location("Effiel Tower à Paris", 48.858, 2.294, IsRadian= False))
