@@ -11,6 +11,7 @@ using System.Runtime.CompilerServices;  // Super Optimization
 /// </summary>
 public class Haversine
 {
+    [Obsolete("May cause bug on calculations")]
     public static double Normalize(double lon)
     {
         return (lon + 540) % 360 - 180;

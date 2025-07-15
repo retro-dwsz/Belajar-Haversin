@@ -2,13 +2,13 @@
   "version": 3,
   "targets": {
     "net9.0": {
-      "Microsoft.DotNet.ILCompiler/9.0.6": {
+      "Microsoft.DotNet.ILCompiler/9.0.7": {
         "type": "package",
         "build": {
           "build/Microsoft.DotNet.ILCompiler.props": {}
         }
       },
-      "Microsoft.NET.ILLink.Tasks/9.0.6": {
+      "Microsoft.NET.ILLink.Tasks/9.0.7": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
@@ -16,31 +16,31 @@
       }
     },
     "net9.0/win-x64": {
-      "Microsoft.DotNet.ILCompiler/9.0.6": {
+      "Microsoft.DotNet.ILCompiler/9.0.7": {
         "type": "package",
         "dependencies": {
-          "runtime.win-x64.Microsoft.DotNet.ILCompiler": "9.0.6"
+          "runtime.win-x64.Microsoft.DotNet.ILCompiler": "9.0.7"
         },
         "build": {
           "build/Microsoft.DotNet.ILCompiler.props": {}
         }
       },
-      "Microsoft.NET.ILLink.Tasks/9.0.6": {
+      "Microsoft.NET.ILLink.Tasks/9.0.7": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.ILLink.Tasks.props": {}
         }
       },
-      "runtime.win-x64.Microsoft.DotNet.ILCompiler/9.0.6": {
+      "runtime.win-x64.Microsoft.DotNet.ILCompiler/9.0.7": {
         "type": "package"
       }
     }
   },
   "libraries": {
-    "Microsoft.DotNet.ILCompiler/9.0.6": {
-      "sha512": "O7Row/kOgEA3PXpeCVKpDJ9ooAoJDoKoxpZC86voOAwV2NA1jTbQ0Nn0VCuoTT/IvU0T7YNlPldAS0mOrppXmw==",
+    "Microsoft.DotNet.ILCompiler/9.0.7": {
+      "sha512": "FpvJ2rCpj2CB/4hZt0cmB3hCPMNZV2vrisQis3hR9itTEjLzeggi0AShrgJIZ5+3Y7433K7ESSsJ6+8T+nE2nQ==",
       "type": "package",
-      "path": "microsoft.dotnet.ilcompiler/9.0.6",
+      "path": "microsoft.dotnet.ilcompiler/9.0.7",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -59,17 +59,17 @@
         "build/NativeAOT.natvis",
         "build/WindowsAPIs.txt",
         "build/findvcvarsall.bat",
-        "microsoft.dotnet.ilcompiler.9.0.6.nupkg.sha512",
+        "microsoft.dotnet.ilcompiler.9.0.7.nupkg.sha512",
         "microsoft.dotnet.ilcompiler.nuspec",
         "runtime.json",
         "tools/netstandard/ILCompiler.Build.Tasks.deps.json",
         "tools/netstandard/ILCompiler.Build.Tasks.dll"
       ]
     },
-    "Microsoft.NET.ILLink.Tasks/9.0.6": {
-      "sha512": "TXy3SbJzGXQbxxIxCjdrp8bwEyTDImyYNpTpd6v7P3JL2Y7dno8EYG7dPezfYTa5SoWKdhbH9cbnwHHs3BR5gA==",
+    "Microsoft.NET.ILLink.Tasks/9.0.7": {
+      "sha512": "SZ1brSGoLnhLbE8QUZrtN6YwzN2gDT1wbx9qDBEfFFJcstiDTjJ6ygNuTPBV/K7SjGfx2YNbcJi5+ygbPOZpDg==",
       "type": "package",
-      "path": "microsoft.net.illink.tasks/9.0.6",
+      "path": "microsoft.net.illink.tasks/9.0.7",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -83,7 +83,7 @@
         "build/Microsoft.NET.ILLink.Analyzers.props",
         "build/Microsoft.NET.ILLink.Tasks.props",
         "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.9.0.6.nupkg.sha512",
+        "microsoft.net.illink.tasks.9.0.7.nupkg.sha512",
         "microsoft.net.illink.tasks.nuspec",
         "tools/net472/ILLink.Tasks.dll",
         "tools/net472/ILLink.Tasks.dll.config",
@@ -117,10 +117,10 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "runtime.win-x64.Microsoft.DotNet.ILCompiler/9.0.6": {
-      "sha512": "CnNmfPtanygd9DnZ/Qe0dLjvPtP4ujx1uDRsS8UEeFS2cg72fYVNo7tje3/F26NjfnwDRE6xGX0c/eczhSps4g==",
+    "runtime.win-x64.Microsoft.DotNet.ILCompiler/9.0.7": {
+      "sha512": "nftDR4604AcQawEWSfb7pcZWoNfaB+vnKQL3P2LUfzRoA8S6K+YObgotgJVNopMBMXLxQN0VSKGEdRa+WFlN/g==",
       "type": "package",
-      "path": "runtime.win-x64.microsoft.dotnet.ilcompiler/9.0.6",
+      "path": "runtime.win-x64.microsoft.dotnet.ilcompiler/9.0.7",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
@@ -475,7 +475,7 @@
         "mibc/DotNet_HelloWorld.mibc",
         "mibc/DotNet_OrchardCore.mibc",
         "mibc/DotNet_TechEmpower.mibc",
-        "runtime.win-x64.microsoft.dotnet.ilcompiler.9.0.6.nupkg.sha512",
+        "runtime.win-x64.microsoft.dotnet.ilcompiler.9.0.7.nupkg.sha512",
         "runtime.win-x64.microsoft.dotnet.ilcompiler.nuspec",
         "sdk/Runtime.ServerGC.GuardCF.lib",
         "sdk/Runtime.ServerGC.GuardCF.pdb",
@@ -553,8 +553,8 @@
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "Microsoft.DotNet.ILCompiler >= 9.0.6",
-      "Microsoft.NET.ILLink.Tasks >= 9.0.6"
+      "Microsoft.DotNet.ILCompiler >= 9.0.7",
+      "Microsoft.NET.ILLink.Tasks >= 9.0.7"
     ]
   },
   "packageFolders": {
@@ -611,13 +611,13 @@
           "Microsoft.DotNet.ILCompiler": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[9.0.6, )",
+            "version": "[9.0.7, )",
             "autoReferenced": true
           },
           "Microsoft.NET.ILLink.Tasks": {
             "suppressParent": "All",
             "target": "Package",
-            "version": "[9.0.6, )",
+            "version": "[9.0.7, )",
             "autoReferenced": true
           }
         },
@@ -635,19 +635,19 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
-            "version": "[9.0.6, 9.0.6]"
+            "version": "[9.0.7, 9.0.7]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-x64",
-            "version": "[9.0.6, 9.0.6]"
+            "version": "[9.0.7, 9.0.7]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
-            "version": "[9.0.6, 9.0.6]"
+            "version": "[9.0.7, 9.0.7]"
           },
           {
             "name": "runtime.win-x64.Microsoft.DotNet.ILCompiler",
-            "version": "[9.0.6, 9.0.6]"
+            "version": "[9.0.7, 9.0.7]"
           }
         ],
         "frameworkReferences": {
@@ -655,7 +655,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

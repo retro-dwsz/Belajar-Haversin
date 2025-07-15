@@ -170,28 +170,29 @@ class Distance
         [MethodImpl(MethodImplOptions.AggressiveOptimization)]
         public static double Distance(Location A, Location B, bool IsRadian = false)
         {
-            double lat1, lon1;
-            double lat2, lon2;
+            double lat1, lon1;      // Laltitudes
+            double lat2, lon2;      // Longitudes
 
-            double Dlat;
-            double Dlon;
+            double Dlat;            // Delta Latitude
+            double Dlon;            // Delta Longitude
 
-            double hav1;
-            double hav2;
-            double cos1;
-            double cos2;
+            // Parted formula
+            double hav1;            // 1st
+            double cos1;            // 2nd
+            double cos2;            // 3rd
+            double hav2;            // 4th
 
             double Hav, T, d;
 
             if (!IsRadian)
             {
-                lat1 = A.Lat;
-                lon1 = A.Lon;
-                lat2 = B.Lat;
-                lon2 = B.Lon;
+                lat1 = A.Lat;       // Latitude of 1st location
+                lon1 = A.Lon;       // Longitude of 1st location 
+                lat2 = B.Lat;       // Latitude of 2nd location
+                lon2 = B.Lon;       // Longitude of 2nd location
 
-                Dlat = Haversine.Normalize(lat2 - lat1);
-                Dlon = Haversine.Normalize(lon2 - lon1);
+                Dlat = lat2 - lat1;
+                Dlon = lon2 - lon1;
 
                 hav1 = Haversine.Hav_deg(Dlat);
                 hav2 = Haversine.Hav_deg(Dlon);
@@ -204,13 +205,13 @@ class Distance
             }
             else
             {
-                lat1 = A.Lat;
-                lon1 = A.Lon;
-                lat2 = B.Lat;
-                lon2 = B.Lon;
+                lat1 = A.Lat;       // Latitude of 1st location
+                lon1 = A.Lon;       // Longitude of 1st location 
+                lat2 = B.Lat;       // Latitude of 2nd location
+                lon2 = B.Lon;       // Longitude of 2nd location
 
-                Dlat = Haversine.Normalize(lat2 - lat1);
-                Dlon = Haversine.Normalize(lon2 - lon1);
+                Dlat = lat2 - lat1;
+                Dlon = lon2 - lon1;
 
                 hav1 = Haversine.Hav_rad(Dlat);
                 hav2 = Haversine.Hav_rad(Dlon);
