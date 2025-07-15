@@ -15,6 +15,19 @@ class Location
         Degree,
         Radian
     }
+
+    public static string StrUnit(Unit Unit)
+    {
+        switch (Unit)
+        {
+            case Unit.Degree:
+                return "Degree";
+            case Unit.Radian:
+                return "Radian";
+            default:
+                return "";
+        }
+    } 
     /*
      Default latitude       0 
      Default longitude      0

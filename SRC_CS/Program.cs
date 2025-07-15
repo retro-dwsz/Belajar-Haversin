@@ -2,6 +2,7 @@
 namespace CS_Navigation;
 
 using System;                           // System sauces
+using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;  // Super Optimization
 
 /**/
@@ -21,7 +22,30 @@ class Program{
         //     return false;
         // }
     }
-    
+
+    private static string GetSystem()
+    {
+        string OS = Environment.OSVersion.ToString();
+        return $"{OS}";
+    }
+
+    private static string GetCPU()
+    {
+        Architecture arch = RuntimeInformation.ProcessArchitecture;
+        switch (arch)
+        {
+            default: return "Unknown";
+            case Architecture.X64:
+                return "X64";
+            case Architecture.Arm:
+                return "ARM";
+            case Architecture.Arm64:
+                return "ARM64";
+            case Architecture.LoongArch64:
+                return "LARM64";
+        }
+    }
+
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
     public static void IPB() {
         /*
@@ -29,7 +53,7 @@ class Program{
         [-6.559582, 106.726720]
         */
 
-        Console.WriteLine($"Current terminal size: {Misc.TerminalSize}");
+        // Console.WriteLine($"Current terminal size: {Misc.TerminalSize}");
 
         Location SV_IPB = new Location("SV IPB", -6.588457, 106.806200, isRadian: false);
         Location Danau_IPB = new Location("Danau IPB", -6.559582, 106.726720, isRadian: false);
@@ -85,9 +109,9 @@ class Program{
 
     public static void Main()
     {
+        Console.WriteLine($"Terminal size: {Misc.TerminalSize}\nRunning on {GetSystem()} using {GetCPU()}");
         string TITLE = ColorTx.ColorStr("Haversine Implementation!");
         Console.WriteLine(Misc.PrintMid(TITLE, ' ', LeftBorder:' ', RightBorder:' '));
-        Console.WriteLine($"Terminal size: {Misc.TerminalSize}");
         
         // Save current color
         // ConsoleColor CurrentColor = Console.BackgroundColor;

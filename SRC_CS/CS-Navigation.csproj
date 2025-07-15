@@ -13,17 +13,33 @@
     <StripSymbols>true</StripSymbols>     <!-- Hilangkan simbol debug -->
     <TrimMode>link</TrimMode>
     <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
-    <SelfContained>true</SelfContained>
-
-
-  <!--    <DebugType>pdbonly</DebugType>-->
-  <!--    <DebugSymbols>true</DebugSymbols>-->
-    
+    <SelfContained>true</SelfContained>    
   </PropertyGroup>
-<!--  
-   <ItemGroup>
-    <PackageReference Include="BenchmarkDotNet" Version="0.15.2" />
-  </ItemGroup>
--->
+
+  <!-- WINDOWS -->
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <!-- AOT dan SingleFile gak bisa bareng -->
+    <PublishSingleFile>false</PublishSingleFile>
+
+    <OutputPath>Bin/Build/</OutputPath>             <!-- Output build -->
+    <PublishDir>Bin/Publish/</PublishDir>           <!-- Output publish -->
+
+    <!-- Optimization -->
+    <Optimize>true</Optimize>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+
+    <!-- Trimming & Size Optimization -->
+    <PublishTrimmed>true</PublishTrimmed>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <StripSymbols>true</StripSymbols>
+
+    <!-- AOT Native Compilation -->
+    <PublishAot>true</PublishAot>
+    <IlcDisableReflection>true</IlcDisableReflection>
+    <IlcGenerateCompleteTypeMetadata>false</IlcGenerateCompleteTypeMetadata>
+
+    <!-- Compression -->
+    <EnableCompressionInSingleFile>true</EnableCompressionInSingleFile>
+  </PropertyGroup>
   
 </Project>

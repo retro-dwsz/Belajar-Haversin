@@ -46,13 +46,13 @@ class Distance
 
             // Calculate Deltas
             // Delta phi
-            double Dlat = Haversine.Normalize(lat2 - lat1);
+            double Dlat = lat2 - lat1;
             Console.WriteLine($"{Symbols.DELTA}{Symbols.PHI} = {Symbols.PHI}{Symbols.SB2} - {Symbols.PHI}{Symbols.SB1}");
             Console.WriteLine($"{Symbols.DELTA}{Symbols.PHI} = {lat2} - {lat1}");
             Console.WriteLine($"{Symbols.DELTA}{Symbols.PHI} = {Dlat}\n");
 
             // Delta lambda
-            double Dlon = Haversine.Normalize(lon2 - lon1);
+            double Dlon = lon2 - lon1;
             Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {Symbols.LAMBDA}{Symbols.SB2} - {Symbols.LAMBDA}{Symbols.SB1}");
             Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {lon2} - {lon1}");
             Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {Dlon}\n~~~");
@@ -121,13 +121,13 @@ class Distance
 
             // Calculate Deltas
             // Delta phi
-            double Dlat = Haversine.Normalize(lat2 - lat1);
+            double Dlat = lat2 - lat1;
             Console.WriteLine($"{Symbols.DELTA}{Symbols.PHI} = {Symbols.PHI}{Symbols.SB2} - {Symbols.PHI}{Symbols.SB1}");
             Console.WriteLine($"{Symbols.DELTA}{Symbols.PHI} = {lat2} - {lat1}");
             Console.WriteLine($"{Symbols.DELTA}{Symbols.PHI} = {Dlat}\n");
 
             // Delta lambda
-            double Dlon = Haversine.Normalize(lon2 - lon1);
+            double Dlon = lon2 - lon1;
             Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {Symbols.LAMBDA}{Symbols.SB2} - {Symbols.LAMBDA}{Symbols.SB1}");
             Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {lon2} - {lon1}");
             Console.WriteLine($"{Symbols.DELTA}{Symbols.LAMBDA} = {Dlon}\n~~~");
@@ -167,25 +167,35 @@ class Distance
             return d;
         }
 
-        [MethodImpl(MethodImplOptions.AggressiveOptimization)]
+        // No printing calculations
+        [MethodImpl(MethodImplOptions.AggressiveOptimization | MethodImplOptions.AggressiveInlining)]
         public static double Distance(Location A, Location B, bool IsRadian = false)
         {
+            int R = 6371;           // Earth radius
             double lat1, lon1;      // Laltitudes
             double lat2, lon2;      // Longitudes
 
             double Dlat;            // Delta Latitude
             double Dlon;            // Delta Longitude
 
-            // Parted formula
+            // Parted formula: hav(Δφ) + cos(φ₁) * cos(φ₂) * hav(Δλ)
+            // hav1 = hav(Δφ)
+            // cos1 = cos(φ₁)
+            // cos2 = cos(φ₂)
+            // hav2 = hav(Δλ)
             double hav1;            // 1st
             double cos1;            // 2nd
             double cos2;            // 3rd
             double hav2;            // 4th
 
+            // Finaization
+            // Hav = the big hav
+            // T = Theta
+            // d = final distance
             double Hav, T, d;
 
             if (!IsRadian)
-            {
+            {   // Degree
                 lat1 = A.Lat;       // Latitude of 1st location
                 lon1 = A.Lon;       // Longitude of 1st location 
                 lat2 = B.Lat;       // Latitude of 2nd location
@@ -199,12 +209,12 @@ class Distance
                 cos1 = Math.Cos(Haversine.deg2rad(lat1));
                 cos2 = Math.Cos(Haversine.deg2rad(lat2));
                 Hav = hav1 + cos1 * cos2 * hav2;
-                T = 2 * Math.Asin(Math.Sqrt(Hav));
+                T = 2 * Math.Asin(Math.Sqrt(Hav));      // For degree, use asin (Wikipedia reference)
                 d = R * T;
                 return d;
             }
             else
-            {
+            {   // Radian
                 lat1 = A.Lat;       // Latitude of 1st location
                 lon1 = A.Lon;       // Longitude of 1st location 
                 lat2 = B.Lat;       // Latitude of 2nd location
@@ -218,7 +228,7 @@ class Distance
                 cos1 = Math.Cos(lat1);
                 cos2 = Math.Cos(lat2);
                 Hav = hav1 + cos1 * cos2 * hav2;
-                T = 2 * Math.Atan2(Math.Sqrt(Hav), Math.Sqrt(1 - Hav));
+                T = 2 * Math.Atan2(Math.Sqrt(Hav), Math.Sqrt(1 - Hav));     // För radian, use atan2 (other references)
                 d = R * T;
                 return d;
             }
