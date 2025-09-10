@@ -9,8 +9,7 @@ using System.Runtime.CompilerServices;  // Super Optimization
 /// Provides utility methods for string manipulation and console formatting.
 /// Includes functions to repeat strings, center text in the terminal, and more.
 /// </summary>
-public static class Misc
-{
+public static class Misc {
     /// <summary>
     /// Gets the current width of the console window.
     /// Can be used as a reference for aligning or centering output.
@@ -29,12 +28,10 @@ public static class Misc
     /// string result = Misc.Repeater("hello", 3); // Returns "hellohellohello"
     /// </code>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static string Repeater(object str, int repetitions = 1)
-    {
+    public static string Repeater(object str, int repetitions = 1) {
         StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < repetitions; i++)
-        {
+        for (int i = 0; i < repetitions; i++) {
             sb.Append(str?.ToString());
         }
 
@@ -58,8 +55,7 @@ public static class Misc
     /// </code>
     /// </example>
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static string PrintMid(string Text = "Hello", char Char = '=', int offset = 2, char LeftBorder = '[', char RightBorder = ']', bool Printing = false)
-    {
+    public static string PrintMid(string Text = "Hello", char Char = '=', int offset = 2, char LeftBorder = '[', char RightBorder = ']', bool Printing = false) {
         int ConsoleWidth = TerminalSize + offset;               // Get width + offset
         int Border_sz = (ConsoleWidth - Text.Length - 4) / 2;   // Subtract the length of the text and some spacing ([Text] takes up 4 characters).
                                                                 // Divide the remaining space equally between left and right borders.
@@ -74,8 +70,7 @@ public static class Misc
         // Final assembly
         string Content = $"{Left}{LeftBorder}{Text}{RightBorder}{Right}";
 
-        if (Printing)
-        {
+        if (Printing) {
             Console.WriteLine(Content);
         }
 
@@ -83,24 +78,19 @@ public static class Misc
     }
 }
 
-class ColorTx
-{
+class ColorTx {
     public enum Position { Back, Fore }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static string ColorStr(string text = "Hello, world!", uint hex = 0xFF109696, Position pos = Position.Fore)
-    {
+    public static string ColorStr(string text = "Hello, world!", uint hex = 0xFF109696, Position pos = Position.Fore) {
         // Parse RGB from 0xAARRGGBB or 0xRRGGBB
         byte a = 255, r, g, b;
-        if (hex > 0xFFFFFF)
-        {
+        if (hex > 0xFFFFFF) {
             a = (byte)((hex >> 24) & 0xFF);
             r = (byte)((hex >> 16) & 0xFF);
             g = (byte)((hex >> 8) & 0xFF);
             b = (byte)(hex & 0xFF);
-        }
-        else
-        {
+        } else {
             r = (byte)((hex >> 16) & 0xFF);
             g = (byte)((hex >> 8) & 0xFF);
             b = (byte)(hex & 0xFF);
@@ -118,25 +108,19 @@ class ColorTx
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static void Print(uint hex, Position pos, string text)
-    {
+    public static void Print(uint hex, Position pos, string text) {
         Console.WriteLine(ColorStr(text, hex, pos));
         Console.ResetColor(); // Don't leave your terminal cursed
     }
 
     // Kinda not useful
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static void Debug(string text)
-    {
+    public static void Debug(string text) {
         Console.Write("DEBUG RAW: ");
-        foreach (char c in text)
-        {
-            if (!char.IsControl(c) && !char.IsWhiteSpace(c))
-            {
+        foreach (char c in text) {
+            if (!char.IsControl(c) && !char.IsWhiteSpace(c)) {
                 Console.Write(c);
-            }
-            else
-            {
+            } else {
                 Console.Write($"\\x{((int)c):X2}");
             }
         }
@@ -144,8 +128,7 @@ class ColorTx
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    private static ConsoleColor RgbToConsoleColor(byte r, byte g, byte b)
-    {
+    private static ConsoleColor RgbToConsoleColor(byte r, byte g, byte b) {
         // Naive RGB -> ConsoleColor mapping
         int index = (r > 128 ? 4 : 0) + (g > 128 ? 2 : 0) + (b > 128 ? 1 : 0);
         return (ConsoleColor)index;

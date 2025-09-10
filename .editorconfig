@@ -1,0 +1,20 @@
+# .editorconfig
+
+root = true
+
+[*.cs]
+# Brace placement
+csharp_new_line_before_open_brace = false
+csharp_new_line_before_else = false
+csharp_new_line_before_catch = false
+csharp_new_line_before_finally = false
+csharp_new_line_before_members_in_object_initializers = false
+csharp_new_line_before_members_in_anonymous_types = false
+csharp_new_line_between_consecutive_brace_pairs = false
+
+# Indentation
+indent_style = space
+indent_size = 4
+
+# Optional: Enforce inline braces
+# This tells OmniSharp to format like: void F() { ... }

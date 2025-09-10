@@ -1,16 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "Zx4I6mh5Npg=",
+  "dgSpecHash": "w+DlKL51JOo=",
   "success": true,
   "projectFilePath": "D:\\Code\\!Docs\\Obsolete Trig\\_Belajar Haversine\\SRC_CS\\CS-Navigation.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\David Sirait\\.nuget\\packages\\microsoft.dotnet.ilcompiler\\9.0.7\\microsoft.dotnet.ilcompiler.9.0.7.nupkg.sha512",
-    "C:\\Users\\David Sirait\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.7\\microsoft.net.illink.tasks.9.0.7.nupkg.sha512",
-    "C:\\Users\\David Sirait\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\9.0.7\\runtime.win-x64.microsoft.dotnet.ilcompiler.9.0.7.nupkg.sha512",
-    "C:\\Users\\David Sirait\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\9.0.7\\microsoft.netcore.app.runtime.win-x64.9.0.7.nupkg.sha512",
-    "C:\\Users\\David Sirait\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\9.0.7\\microsoft.windowsdesktop.app.runtime.win-x64.9.0.7.nupkg.sha512",
-    "C:\\Users\\David Sirait\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\9.0.7\\microsoft.aspnetcore.app.runtime.win-x64.9.0.7.nupkg.sha512",
-    "C:\\Users\\David Sirait\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\9.0.7\\runtime.win-x64.microsoft.dotnet.ilcompiler.9.0.7.nupkg.sha512"
+    "C:\\Users\\David Sirait\\.nuget\\packages\\microsoft.dotnet.ilcompiler\\9.0.8\\microsoft.dotnet.ilcompiler.9.0.8.nupkg.sha512",
+    "C:\\Users\\David Sirait\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.8\\microsoft.net.illink.tasks.9.0.8.nupkg.sha512",
+    "C:\\Users\\David Sirait\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\9.0.8\\runtime.win-x64.microsoft.dotnet.ilcompiler.9.0.8.nupkg.sha512",
+    "C:\\Users\\David Sirait\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\9.0.8\\microsoft.netcore.app.runtime.win-x64.9.0.8.nupkg.sha512",
+    "C:\\Users\\David Sirait\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\9.0.8\\microsoft.windowsdesktop.app.runtime.win-x64.9.0.8.nupkg.sha512",
+    "C:\\Users\\David Sirait\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\9.0.8\\microsoft.aspnetcore.app.runtime.win-x64.9.0.8.nupkg.sha512",
+    "C:\\Users\\David Sirait\\.nuget\\packages\\runtime.win-x64.microsoft.dotnet.ilcompiler\\9.0.8\\runtime.win-x64.microsoft.dotnet.ilcompiler.9.0.8.nupkg.sha512"
   ],
   "logs": []
 }

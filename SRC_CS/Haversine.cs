@@ -1,6 +1,7 @@
 /* Haversine.cs */
 
 namespace Haversine;
+
 using Symbols;
 
 using System.Runtime.CompilerServices;  // Super Optimization
@@ -9,12 +10,10 @@ using System.Runtime.CompilerServices;  // Super Optimization
 /// Provides methods to calculate the haversine function used in geographical distance calculations.
 /// Includes support for both radians and degrees, with optional verbose output for debugging.
 /// </summary>
-public class Haversine
-{
+public class Haversine {
     [Obsolete("May cause bug on calculations")]
-    
-    public static double Normalize(double lon)
-    {
+
+    public static double Normalize(double lon) {
         return (lon + 540) % 360 - 180;
     }
 
@@ -25,11 +24,9 @@ public class Haversine
     /// <param name="Printing">Optional. If true, prints intermediate values to console.</param>
     /// <returns>The angle converted to radians.</returns>
     [MethodImpl(MethodImplOptions.AggressiveOptimization)]
-    public static double deg2rad(double deg, bool Printing = false)
-    {
+    public static double deg2rad(double deg, bool Printing = false) {
         double var = Math.PI / 180 * deg;
-        if (Printing)
-        {
+        if (Printing) {
             Console.WriteLine($"deg = {deg}");
             Console.WriteLine($"rad = {var}");
         }
@@ -43,12 +40,10 @@ public class Haversine
     /// <param name="Printing">Optional. If true, logs intermediate steps to console.</param>
     /// <returns>Haversine value (double).</returns>
     [MethodImpl(MethodImplOptions.AggressiveOptimization)]
-    public static double Hav_rad(double x, bool Printing = false)
-    {
+    public static double Hav_rad(double x, bool Printing = false) {
         double Cos = 1 - Math.Cos(x);
         double hHav = Cos / 2;
-        if (Printing)
-        {
+        if (Printing) {
             Console.WriteLine($"~! x = {x}{Symbols.RAD}");
             Console.WriteLine($"~! cos(x) = {Math.Cos(x)}");
             Console.WriteLine($"~! 1-cos(x) = {Cos}");
@@ -66,8 +61,7 @@ public class Haversine
     /// <param name="Printing">Optional. If true, logs intermediate steps to console.</param>
     /// <returns>Haversine value (double).</returns>
     [MethodImpl(MethodImplOptions.AggressiveOptimization)]
-    public static double Hav_deg(double x, bool Printing = false)
-    {
+    public static double Hav_deg(double x, bool Printing = false) {
         // radian-ize the Angle
         // because C# expect angle in radian
         x = deg2rad(x);
@@ -75,8 +69,7 @@ public class Haversine
         double Cos = 1 - Math.Cos(x);
         double hHav = Cos / 2;
 
-        if (Printing)
-        {
+        if (Printing) {
             Console.WriteLine($"~! x = {x}{Symbols.RAD}");
             Console.WriteLine($"~! cos(x) = {Math.Cos(x)}");
             Console.WriteLine($"~! 1-cos(x) = {Cos}");
@@ -94,19 +87,15 @@ public class Haversine
     /// <param name="Printing">Optional. If true, logs intermediate steps to console.</param>
     /// <returns>Haversine value (double).</returns>
     [MethodImpl(MethodImplOptions.AggressiveOptimization)]
-    public static double Hav(double x, bool isRadian = false, bool Printing = false)
-    {
-        if (isRadian) { }
-        else
-        {
+    public static double Hav(double x, bool isRadian = false, bool Printing = false) {
+        if (isRadian) { } else {
             x = deg2rad(x);
         }
 
         double Cos = 1 - Math.Cos(x);
         double hHav = Cos / 2;
 
-        if (Printing)
-        {
+        if (Printing) {
             Console.WriteLine($"~ x = {x} {Symbols.RAD}");
             Console.WriteLine($"~ cos(x) = {Math.Cos(x)}");
             Console.WriteLine($"~ 1-cos(x) = {Cos}");

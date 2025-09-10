@@ -12,7 +12,7 @@ using Location;                // Main sauce I
 using Distance;                // The main dish along with the main sauce
 using Misc;                    // Very side dish
 
-class Program{
+class Program {
     private static bool CheckEqual(object Var1, object Var2) {
         return Equals(Var1, Var2);
         // if (Var1 == Var2) {
@@ -23,17 +23,14 @@ class Program{
         // }
     }
 
-    private static string GetSystem()
-    {
+    private static string GetSystem() {
         string OS = Environment.OSVersion.ToString();
         return $"{OS}";
     }
 
-    private static string GetCPU()
-    {
+    private static string GetCPU() {
         Architecture arch = RuntimeInformation.ProcessArchitecture;
-        switch (arch)
-        {
+        switch (arch) {
             default: return "Unknown";
             case Architecture.X64:
                 return "X64";
@@ -61,18 +58,18 @@ class Program{
         SV_IPB.Printer();
         Danau_IPB.Printer();
 
-        Console.WriteLine(Misc.PrintMid(Misc.PrintMid("Degree", '-', offset:-(Misc.TerminalSize/2), LeftBorder:' ', RightBorder:' '), Char:' ', LeftBorder:' ', RightBorder:' '));
+        Console.WriteLine(Misc.PrintMid(Misc.PrintMid("Degree", '-', offset: -(Misc.TerminalSize / 2), LeftBorder: ' ', RightBorder: ' '), Char: ' ', LeftBorder: ' ', RightBorder: ' '));
         // double D = nDistance.Distance_2D.Distance_Deg(SV_IPB, Danau_IPB);
         double D = Distance.Distance_2D.Distance_Deg(SV_IPB, Danau_IPB);
 
-        Console.WriteLine(Misc.PrintMid(Misc.PrintMid("Radians", '-', offset:-(Misc.TerminalSize/2), LeftBorder:' ', RightBorder:' '), Char:' ', LeftBorder:' ', RightBorder:' '));
+        Console.WriteLine(Misc.PrintMid(Misc.PrintMid("Radians", '-', offset: -(Misc.TerminalSize / 2), LeftBorder: ' ', RightBorder: ' '), Char: ' ', LeftBorder: ' ', RightBorder: ' '));
         SV_IPB.toRadian();
         Danau_IPB.toRadian();
-        
+
         // double R = nDistance.Distance_2D.Distance_Rad(SV_IPB, Danau_IPB);
         double R = Distance.Distance_2D.Distance_Rad(SV_IPB, Danau_IPB);
 
-        Console.WriteLine(Misc.Repeater("~", Console.WindowWidth/2));
+        Console.WriteLine(Misc.Repeater("~", Console.WindowWidth / 2));
 
         Console.WriteLine($"Degrees = {D} KM");
         Console.WriteLine($"Radians = {R} KM");
@@ -81,25 +78,24 @@ class Program{
     }
 
     [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    public static void WikipediaExample()
-    {
+    public static void WikipediaExample() {
         Location WhiteHouse = new Location("White House WDC", 38.898, 77.037);
         Location EffielTowr = new Location("Effiel Tower à Paris", 48.858, 2.294);
 
         WhiteHouse.Printer();
         EffielTowr.Printer();
 
-        Console.WriteLine(Misc.PrintMid(Misc.PrintMid("Degree", '-', offset:-(Misc.TerminalSize/2), LeftBorder:' ', RightBorder:' '), Char:' ', LeftBorder:' ', RightBorder:' '));
+        Console.WriteLine(Misc.PrintMid(Misc.PrintMid("Degree", '-', offset: -(Misc.TerminalSize / 2), LeftBorder: ' ', RightBorder: ' '), Char: ' ', LeftBorder: ' ', RightBorder: ' '));
 
         double D = Distance.Distance_2D.Distance_Deg(WhiteHouse, EffielTowr);
 
         WhiteHouse.toRadian();
         EffielTowr.toRadian();
 
-        Console.WriteLine(Misc.PrintMid(Misc.PrintMid("Radians", '-', offset:-(Misc.TerminalSize/2), LeftBorder:' ', RightBorder:' '), Char:' ', LeftBorder:' ', RightBorder:' '));
+        Console.WriteLine(Misc.PrintMid(Misc.PrintMid("Radians", '-', offset: -(Misc.TerminalSize / 2), LeftBorder: ' ', RightBorder: ' '), Char: ' ', LeftBorder: ' ', RightBorder: ' '));
         double R = Distance.Distance_2D.Distance_Rad(WhiteHouse, EffielTowr);
 
-        Console.WriteLine(Misc.Repeater("~", Console.WindowWidth/2));
+        Console.WriteLine(Misc.Repeater("~", Console.WindowWidth / 2));
 
         Console.WriteLine($"Degrees = {D} KM");
         Console.WriteLine($"Radians = {R} KM");
@@ -107,12 +103,11 @@ class Program{
         Console.WriteLine(CheckEqual(D, R) ? "APPROVED!" : "meh");
     }
 
-    public static void Main()
-    {
+    public static void Main() {
         Console.WriteLine($"Terminal size: {Misc.TerminalSize}\nRunning on {GetSystem()} using {GetCPU()}");
         string TITLE = ColorTx.ColorStr("Haversine Implementation!");
-        Console.WriteLine(Misc.PrintMid(TITLE, ' ', LeftBorder:' ', RightBorder:' '));
-        
+        Console.WriteLine(Misc.PrintMid(TITLE, ' ', LeftBorder: ' ', RightBorder: ' '));
+
         // Save current color
         // ConsoleColor CurrentColor = Console.BackgroundColor;
         // Set color

@@ -8,12 +8,10 @@ using Location;
 
 using System.Runtime.CompilerServices;  // Super Optimization
 
-class Distance
-{
+class Distance {
     public static int R = 6371;
 
-    public class Distance_2D
-    {
+    public class Distance_2D {
         /*
         based on Wikipedia article (With Printing)
         https://en.wikipedia.org/wiki/Haversine_formula
@@ -27,8 +25,7 @@ class Distance
         archav(θ) = 2 * arcsin(√(θ)) = 2 * arctan2(√(θ), √(1-θ))
         */
         [MethodImpl(MethodImplOptions.AggressiveOptimization)]
-        public static double Distance_Deg(Location A, Location B)
-        {
+        public static double Distance_Deg(Location A, Location B) {
             // Print Degree coordinates 
             Console.WriteLine($"Coords in Degrees");
 
@@ -103,8 +100,7 @@ class Distance
         hav(x) = sin²(x/2) = (1 - cos(x))/2
         */
         [MethodImpl(MethodImplOptions.AggressiveOptimization)]
-        public static double Distance_Rad(Location A, Location B)
-        {
+        public static double Distance_Rad(Location A, Location B) {
             // Print Radian coordinates 
             Console.WriteLine("Coords in Radians");
             // Latitudes
@@ -169,8 +165,7 @@ class Distance
 
         // No printing calculations
         [MethodImpl(MethodImplOptions.AggressiveOptimization | MethodImplOptions.AggressiveInlining)]
-        public static double Distance(Location A, Location B, bool IsRadian = false)
-        {
+        public static double Distance(Location A, Location B, bool IsRadian = false) {
             int R = 6371;           // Earth radius
             double lat1, lon1;      // Laltitudes
             double lat2, lon2;      // Longitudes
@@ -194,8 +189,7 @@ class Distance
             // d = final distance
             double Hav, T, d;
 
-            if (!IsRadian)
-            {   // Degree
+            if (!IsRadian) {   // Degree
                 lat1 = A.Lat;       // Latitude of 1st location
                 lon1 = A.Lon;       // Longitude of 1st location 
                 lat2 = B.Lat;       // Latitude of 2nd location
@@ -212,9 +206,7 @@ class Distance
                 T = 2 * Math.Asin(Math.Sqrt(Hav));      // For degree, use asin (Wikipedia reference)
                 d = R * T;
                 return d;
-            }
-            else
-            {   // Radian
+            } else {   // Radian
                 lat1 = A.Lat;       // Latitude of 1st location
                 lon1 = A.Lon;       // Longitude of 1st location 
                 lat2 = B.Lat;       // Latitude of 2nd location
